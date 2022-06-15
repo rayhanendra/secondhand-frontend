@@ -1,0 +1,13 @@
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 14px 16px;
+  gap: 8px;
+  border-radius: 12px;
+  height: 48px;
+}
+
+.primary {
+  background: #7126b5;
+}
