@@ -1,8 +1,8 @@
 import React from 'react';
-import { Col, Container, Row, Button } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import NavBarInfo from 'organisms/Navbar/NavBarInfo';
-import FormFieldInfo from '../organisms/FormFieldInfo/FormFieldInfo'
 import {ArrowLeftCircle} from 'react-bootstrap-icons'
+import FormFieldInfo from '../organisms/FormFieldInfo/FormFieldInfo'
 import styles from '../components/atoms/BaseButton/BaseButton.module.css';
 import style from './formInfoAccount.module.css'
 // import styles from '../styles/Home.module.css';

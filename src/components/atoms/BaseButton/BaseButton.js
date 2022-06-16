@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import styles from './BaseButton.module.css';
-import {ArrowLeftCircle} from 'react-bootstrap-icons'
 
 function BaseButton(props) {
   const { variant = 'primary', children } = props;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { ErrorMessage, useField } from 'formik';
-import styles from './FormInput.module.css';
 import { Button, Form } from 'react-bootstrap'; 
 import { Camera } from 'react-bootstrap-icons';
+import styles from './FormInput.module.css';
 
-export const TextField = ({ label, ...props }) => {
+export function TextField({ label, ...props }) {
   const [field, meta] = useField(props);
   return (
     <div className="mb-2 d-flex flex-column">
@@ -21,7 +21,7 @@ export const TextField = ({ label, ...props }) => {
 
 export default TextField;
 
-export const SelectField = ({ label, ...props }) => {
+export function SelectField({ label, ...props }) {
   const [field, meta] = useField(props);
   return (
     <div className="mb-2 d-flex flex-column">
@@ -39,21 +39,20 @@ export const SelectField = ({ label, ...props }) => {
   )
 }
 
-export const TextAreaField = ({ label, ...props }) => {
+export function TextAreaField({ label, ...props }) {
   const [field, meta] = useField(props);
   return (
     <div className="mb-2 d-flex flex-column">
       <label htmlFor={field.name}>{label}</label>
       <Form.Control as="textarea" rows={4} className={styles.formInput}{...meta.touched && meta.error && 'is-invalid'}
         {...field} {...props}
-        autoComplete="off">
-      </Form.Control>
+        autoComplete="off" />
       <ErrorMessage component="div" name={field.name} className={styles.error} />
     </div>
   )
 }
 
-export const FileField = ({ label, ...props }) => {
+export function FileField({ label, ...props }) {
   const [field, meta] = useField(props);
 
   const hiddenFileInput = React.useRef(null);
@@ -67,12 +66,11 @@ export const FileField = ({ label, ...props }) => {
   return (
     <div className="mb-2 d-flex flex-column">
       <Button className={styles.buttonFile} onClick={handleClick}>
-        <Camera color='#7126B5' size={30}></Camera>
+        <Camera color='#7126B5' size={30} />
       </Button>
       <Form.Control type="file" className={styles.fileInput}{...meta.touched && meta.error && 'is-invalid'}
           {...field} {...props} ref={hiddenFileInput} onChange={handleChange}
-          autoComplete="off">
-      </Form.Control>
+          autoComplete="off" />
       <ErrorMessage component="div" name={field.name} className={styles.error} />
     </div>
   )
