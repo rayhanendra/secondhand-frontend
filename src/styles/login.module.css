@@ -1,0 +1,19 @@
+.login {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.btnlogin {
+  background-color: #7126b5;
+  padding-inline: 300px;
+  border-radius: 15px;
+}
+
+.dftrlgn {
+  justify-content: center;
+  display: flex;
+}
+.dftrdsn {
+  color: #7126b5;
+}
