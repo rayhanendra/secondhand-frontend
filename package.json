@@ -17,8 +17,9 @@
     "prop-types": "^15.8.1",
     "react": "18.1.0",
     "react-bootstrap": "^2.4.0",
-    "react-bootstrap-icons": "^1.8.2",
     "react-dom": "18.1.0",
+    "react-responsive-carousel": "^3.2.23",
+    "react-bootstrap-icons": "^1.8.2",
     "yup": "^0.32.11"
   },
   "devDependencies": {
