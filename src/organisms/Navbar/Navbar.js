@@ -7,8 +7,8 @@ import IconLogin from 'images/iconLogin';
 function NavBar() {
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" className="shadow-sm">
-        <Container>
+      <Navbar fluid="true" collapseOnSelect expand="md" className="shadow-sm">
+        <Container fluid="xl">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Navbar.Brand href="#home">Second Hand</Navbar.Brand>

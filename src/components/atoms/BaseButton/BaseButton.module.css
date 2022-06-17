@@ -1,4 +1,4 @@
-.button {
+.btn {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -6,8 +6,54 @@
   gap: 8px;
   border-radius: 12px;
   height: 48px;
+  border: none;
+  box-shadow: none !important;
+}
+
+.btn-check {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 14px 16px;
+  gap: 8px;
+  border-radius: 12px;
+  height: 48px;
+  color: #7126b5;
+  border: none;
+  box-shadow: none !important;
+}
+
+.btn:active {
+  background: #7126b5;
+  border: none;
+  box-shadow: none;
+}
+.btn:hover {
+  background: #7126b5;
+  border: none;
+  box-shadow: none;
+}
+.btn:focus {
+  background: #7126b5;
+  border: none;
+  box-shadow: none;
+}
+.btn:checked {
+  border: none;
+  box-shadow: none;
+}
+/* .btn: */
+
+.btn-check:active {
+  background: #7126b5;
 }
 
 .primary {
+  /* color: #7126b5; */
   background: #7126b5;
+}
+
+.light {
+  color: #7126b5;
+  background: #e2d4f0;
 }
