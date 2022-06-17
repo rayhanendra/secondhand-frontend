@@ -22,3 +22,27 @@ function BaseButton(props) {
 }
 
 export default BaseButton;
+
+export function ButtonLarge(props) {
+  const { variant = 'primary', children } = props;
+
+  return (
+    <Button
+      className={[styles.buttonLarge, variant === 'primary' ? styles.primary : '']}
+    >
+      {children}
+    </Button>
+  );
+}
+
+export function ImageButton(props) {
+  const { variant = 'primary', children } = props;
+
+  return (
+    <Button
+      className={[styles.imageButton, variant === 'primary' ? styles.primary : '']}
+    >
+      {children}
+    </Button>
+  );
+}

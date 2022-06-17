@@ -1,0 +1,31 @@
+.formInput {
+  width: 40vw;
+  height: 6vh;
+  border: 1px solid #D0D0D0;
+  border-radius: 14px;
+}
+
+.fileInput {
+  display: none;
+}
+
+.error {
+  color: red;
+}
+
+.buttonFile {
+  background: #E2D4F0;
+  border-radius: 12px;
+  width: 96px;
+  height: 96px;
+  margin-top: 1vh;
+}
+
+@media only screen and (max-width: 992px) {
+  .formInput {
+    width: 95vw;
+    height: 6vh;
+    border: 1px solid #D0D0D0;
+    border-radius: 14px;
+  }
+}
