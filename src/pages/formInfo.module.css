@@ -10,6 +10,12 @@
   margin-top: 4vh;
 }
 
+.bagianKananProduk {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 2vh;
+}
+
 .row {
   width: 120vw;
   display: flex;

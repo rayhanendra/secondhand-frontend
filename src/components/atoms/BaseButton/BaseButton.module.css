@@ -12,9 +12,31 @@
   background: #7126b5;
 }
 
+.outline {
+  background: #ffffff;
+  color: #7126b5;
+  border: 1px solid #7126b5;
+}
+
 .buttonLarge {
   width: 40vw;
   height: 6vh;
+  border-radius: 16px;
+  padding: 12px 24px;
+  margin-top: 2vh;
+}
+
+.buttonMedium {
+  width: 19vw;
+  height: 7vh;
+  border-radius: 16px;
+  padding: 12px 24px;
+  margin-top: 2vh;
+}
+
+.buttonMediumOutline {
+  width: 19vw;
+  height: 7vh;
   border-radius: 16px;
   padding: 12px 24px;
   margin-top: 2vh;
@@ -26,6 +48,7 @@
   align-items: center;
   background-color: #ffffff;
   border: 0px;
+  margin-right: 2vw;
 }
 
 @media only screen and (max-width: 992px) {

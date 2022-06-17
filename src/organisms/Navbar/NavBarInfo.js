@@ -1,7 +1,17 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Navbar, NavbarBrand } from 'react-bootstrap';
+import { Navbar, NavbarBrand, NavbarCollapse } from 'react-bootstrap';
 import styles from './navbarInfo.module.css';
+import { useRouter } from 'next/router';
+
+const JudulNavbar = () => {
+  const { pathname } = useRouter();
+  if (pathname == '/formInfoProduk') {
+    return 'Lengkapi info Produk';
+  } else {
+    return 'Lengkapi info Akun';
+  }
+}
 
 function NavBarInfo() {
   return (
@@ -9,7 +19,7 @@ function NavBarInfo() {
       <NavbarBrand className={styles.logo} href='/'/>
       <Navbar.Collapse className='justify-content-center'>
         <div className={styles.titleNavbar}>
-          Lengkapi Info Akun
+          {JudulNavbar()}
         </div>
       </Navbar.Collapse>
     </Navbar>

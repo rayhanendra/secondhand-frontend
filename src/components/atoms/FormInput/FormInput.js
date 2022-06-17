@@ -1,7 +1,7 @@
 import React from 'react';
 import { ErrorMessage, useField } from 'formik';
 import { Button, Form } from 'react-bootstrap'; 
-import { Camera } from 'react-bootstrap-icons';
+import { Camera, Plus } from 'react-bootstrap-icons';
 import styles from './FormInput.module.css';
 
 export function TextField({ label, ...props }) {
@@ -12,13 +12,12 @@ export function TextField({ label, ...props }) {
       <input
         className={styles.formInput}{...meta.touched && meta.error && 'is-invalid'}
         {...field} {...props}
-        autoComplete="off"
+        autoComplete="off" placeholder={'Masukkan ' + label}
       />
       <ErrorMessage component="div" name={field.name} className={styles.error} />
     </div>
   )
 }
-
 export default TextField;
 
 export function SelectField({ label, ...props }) {
@@ -29,7 +28,7 @@ export function SelectField({ label, ...props }) {
       <Form.Select className={styles.formInput}{...meta.touched && meta.error && 'is-invalid'}
         {...field} {...props}
         autoComplete="off">
-          <option>Pilih Kota</option>
+          <option>Pilih {label}</option>
           <option value="1">One</option>
           <option value="2">Two</option>
           <option value="3">Three</option>
@@ -46,7 +45,7 @@ export function TextAreaField({ label, ...props }) {
       <label htmlFor={field.name}>{label}</label>
       <Form.Control as="textarea" rows={4} className={styles.formInput}{...meta.touched && meta.error && 'is-invalid'}
         {...field} {...props}
-        autoComplete="off" />
+        autoComplete="off" placeholder={'Masukkan ' + label}/> 
       <ErrorMessage component="div" name={field.name} className={styles.error} />
     </div>
   )
@@ -67,6 +66,30 @@ export function FileField({ label, ...props }) {
     <div className="mb-2 d-flex flex-column">
       <Button className={styles.buttonFile} onClick={handleClick}>
         <Camera color='#7126B5' size={30} />
+      </Button>
+      <Form.Control type="file" className={styles.fileInput}{...meta.touched && meta.error && 'is-invalid'}
+          {...field} {...props} ref={hiddenFileInput} onChange={handleChange}
+          autoComplete="off" />
+      <ErrorMessage component="div" name={field.name} className={styles.error} />
+    </div>
+  )
+}
+
+export function FileFieldOutline({ label, ...props }) {
+  const [field, meta] = useField(props);
+
+  const hiddenFileInput = React.useRef(null);
+  const handleClick = event => {
+    hiddenFileInput.current.click();
+  };
+  const handleChange = event => {
+    const fileUploaded = event.target.files[0];
+  };
+
+  return (
+    <div className="mb-2 d-flex flex-column">
+      <Button className={styles.buttonFileOutline} onClick={handleClick}>
+        <Plus color='#7126B5' size={30} />
       </Button>
       <Form.Control type="file" className={styles.fileInput}{...meta.touched && meta.error && 'is-invalid'}
           {...field} {...props} ref={hiddenFileInput} onChange={handleChange}

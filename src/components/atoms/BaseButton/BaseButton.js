@@ -28,6 +28,30 @@ export function ButtonLarge(props) {
   );
 }
 
+export function ButtonMedium(props) {
+  const { variant = 'primary', children } = props;
+
+  return (
+    <Button
+      className={[styles.buttonMedium, variant === 'primary' ? styles.primary : '']}
+    >
+      {children}
+    </Button>
+  );
+}
+
+export function ButtonMediumOutline(props) {
+  const { variant = 'outline', children } = props;
+
+  return (
+    <Button
+      className={[styles.buttonMedium, variant === 'outline' ? styles.outline : '']}
+    >
+      {children}
+    </Button>
+  );
+}
+
 export function ImageButton(props) {
   const { variant = 'primary', children } = props;
 

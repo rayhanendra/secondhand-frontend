@@ -2,10 +2,9 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import NavBarInfo from 'organisms/Navbar/NavBarInfo';
 import {ArrowLeftCircle} from 'react-bootstrap-icons'
-import FormFieldInfo from '../organisms/FormFieldInfo/FormFieldInfo'
+import FormFieldProduk from '../organisms/FormFieldProduk/FormFieldProduk'
 import styles from '../components/atoms/BaseButton/BaseButton.module.css';
 import style from './formInfo.module.css'
-// import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
@@ -17,9 +16,9 @@ export default function Home() {
             <ArrowLeftCircle size={30} color='#151515'/>
           </button>
         </Col>
-        <Col lg={9} sm={12} md={12} className={style.bagianKanan}>
-          <FormFieldInfo />
-        </Col>
+        <Col lg={9} sm={12} md={12} className={style.bagianKananProduk}>
+          <FormFieldProduk />
+        </Col> 
       </Row>
     </div>
   );
