@@ -1,16 +1,26 @@
 import React from 'react';
 import { Col, Container, Row, Form, Button } from 'react-bootstrap';
 import Image from 'next/image';
-import images from 'images/loginimg.png';
+import images from 'images/bannerimg.png';
 import styles from 'styles/login.module.css';
+import Link from 'next/link';
 // import styles from '../styles/Home.module.css';
 
 export default function Register() {
   return (
-    <div>
+    <div className={styles.all_page}>
       <Container fluid>
         <Row>
-          <Image src={images} alt="Banner" />
+          <Col className={styles.banner_text}>
+            <Image
+              className={styles.banner}
+              src={images}
+              width={700}
+              height={730}
+              alt="banner-login"
+            />
+            <h2> Second Hand.</h2>
+          </Col>
           <Col className={styles.login}>
             <Form>
               <h1>
@@ -39,7 +49,9 @@ export default function Register() {
               <br /> <br /> <br />
               <h5 className={styles.dftrlgn}>
                 Sudah punya akun ? &nbsp;
-                <strong className={styles.dftrdsn}> Masuk di sini</strong>
+                <Link href="/login">
+                  <strong className={styles.dftrdsn}> Masuk di sini</strong>
+                </Link>
               </h5>
             </Form>
           </Col>
