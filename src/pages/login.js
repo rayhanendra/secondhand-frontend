@@ -18,13 +18,13 @@ import images5 from 'images/battery.png';
 import images6 from 'images/fi_arrow-left.png';
 import styles from 'styles/login.module.css';
 import Link from 'next/link';
-// import styles from '../styles/Home.module.css';
 
 export default function Login() {
   return (
     <div className={styles.all_page}>
       <Container fluid>
         <Row>
+          {/* Awal Nav-Responsive */}
           <Navbar className={styles.nav_responsive} bg="light" variant="light">
             <Container>
               <Navbar.Brand>3:19</Navbar.Brand>
@@ -57,6 +57,8 @@ export default function Login() {
               </Navbar.Brand>
             </Container>
           </Navbar>
+          {/* Akhir Nav-Responsive */}
+
           <Col className={styles.banner_text}>
             <Image
               className={styles.banner}

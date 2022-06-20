@@ -1,22 +1,70 @@
 import React from 'react';
-import { Col, Container, Row, Form, Button } from 'react-bootstrap';
+import {
+  Col,
+  Container,
+  Row,
+  Form,
+  Button,
+  Nav,
+  Navbar,
+} from 'react-bootstrap';
 import Image from 'next/image';
-import images from 'images/bannerimg.png';
+import Images from 'images/bannerimg.png';
+import images1 from 'images/bluetooth.png';
+import images2 from 'images/vibrate.png';
+import images3 from 'images/wifi.png';
+import images4 from 'images/cellular.png';
+import images5 from 'images/battery.png';
+import images6 from 'images/fi_arrow-left.png';
 import styles from 'styles/login.module.css';
 import Link from 'next/link';
-// import styles from '../styles/Home.module.css';
 
 export default function Register() {
   return (
     <div className={styles.all_page}>
       <Container fluid>
         <Row>
+          {/* Awal Nav-Responsive */}
+          <Navbar className={styles.nav_responsive} bg="light" variant="light">
+            <Container>
+              <Navbar.Brand>3:19</Navbar.Brand>
+              <Nav className="me-right">
+                <Navbar.Brand>
+                  <Image src={images1} alt="icon-" />
+                </Navbar.Brand>
+                <Navbar.Brand>
+                  <Image src={images2} alt="icon-" />
+                </Navbar.Brand>
+                <Navbar.Brand>
+                  <Image src={images3} alt="icon-" />
+                </Navbar.Brand>
+                <Navbar.Brand>
+                  <Image src={images4} alt="icon-" />
+                </Navbar.Brand>
+                <Navbar.Brand>
+                  <Image src={images5} alt="icon-" />
+                </Navbar.Brand>
+                <Navbar.Brand>59%</Navbar.Brand>
+              </Nav>
+            </Container>
+          </Navbar>
+          <Navbar>
+            <Container>
+              <Navbar.Brand bg="transparent" className={styles.arrow_icons}>
+                <Link href="/home">
+                  <Image src={images6} alt="arrow-left" />
+                </Link>
+              </Navbar.Brand>
+            </Container>
+          </Navbar>
+          {/* Akhir Nav-Responsive */}
           <Col className={styles.banner_text}>
             <Image
               className={styles.banner}
-              src={images}
+              src={Images}
               width={700}
               height={730}
+              layout="responsive"
               alt="banner-login"
             />
             <h2> Second Hand.</h2>
