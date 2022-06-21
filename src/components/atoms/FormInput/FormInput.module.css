@@ -35,7 +35,8 @@
 @media only screen and (max-width: 992px) {
   .formInput {
     width: 95vw;
-    height: 6vh;
+    height: 8vh;
+    padding-left: 2vw;
     border: 1px solid #D0D0D0;
     border-radius: 14px;
   }

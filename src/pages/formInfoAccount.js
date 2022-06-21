@@ -4,8 +4,7 @@ import NavBarInfo from 'organisms/Navbar/NavBarInfo';
 import {ArrowLeftCircle} from 'react-bootstrap-icons'
 import FormFieldInfo from '../organisms/FormFieldInfo/FormFieldInfo'
 import styles from '../components/atoms/BaseButton/BaseButton.module.css';
-import style from './formInfo.module.css'
-// import styles from '../styles/Home.module.css';
+import style from '../styles/formInfo.module.css'
 
 export default function Home() {
   return (

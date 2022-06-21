@@ -43,7 +43,7 @@ export const FormFieldInfo = () => {
             <TextAreaField label="Deskripsi" name="deskripsiProduk" type="text" />
           </Form>
           <FileFieldOutline name="file"/>
-            <Row>
+            <Row className='d-flex justify-content-center'>
               <Col>
                 <ButtonMediumOutline>Preview</ButtonMediumOutline>
               </Col>

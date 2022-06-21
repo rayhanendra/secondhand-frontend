@@ -63,3 +63,27 @@ export function ImageButton(props) {
     </Button>
   );
 }
+
+export function ButtonCard(props) {
+  const { variant = 'primary', children } = props;
+
+  return (
+    <Button
+      className={[styles.buttonCard, variant === 'primary' ? styles.primary : '']}
+    >
+      {children}
+    </Button>
+  );
+}
+
+export function ButtonCardOutline(props) {
+  const { variant = 'outline', children } = props;
+
+  return (
+    <Button
+      className={[styles.buttonCard, variant === 'outline' ? styles.outline : '']}
+    >
+      {children}
+    </Button>
+  );
+}
