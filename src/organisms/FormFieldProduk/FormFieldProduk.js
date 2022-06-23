@@ -3,8 +3,10 @@ import { Formik, Form } from 'formik';
 import { TextField, SelectField,TextAreaField,FileFieldOutline } from '../../components/atoms/FormInput/FormInput';
 import * as Yup from 'yup';
 import styles from './FormFieldProduk.module.css';
+import style from '../../components/atoms/BaseButton/BaseButton.module.css';
 import {ButtonMedium, ButtonMediumOutline} from 'components/atoms/BaseButton/BaseButton';
 import { Col, Row } from 'react-bootstrap';
+import {ArrowLeft} from 'react-bootstrap-icons';
 
 export const FormFieldInfo = () => {
   const validate = Yup.object({
@@ -37,20 +39,23 @@ export const FormFieldInfo = () => {
       {formik => (
         <div>
           <Form className={styles.formField}>
-            <TextField label="Nama Produk" name="namaProduk" type="text"/>
-            <SelectField label="Kategori" name="kategoriProduk" type="text" />
-            <TextField label="Harga Produk" name="hargaProduk" type="number"/>
-            <TextAreaField label="Deskripsi" name="deskripsiProduk" type="text" />
+            <button className={style.backButton}>
+              <ArrowLeft size={30} color='#151515'/>
+            </button>
+            <div className={styles.form}>
+              <TextField label="Nama Produk" name="namaProduk" type="text"/>
+              <SelectField label="Kategori" name="kategoriProduk" type="text" />
+              <TextField label="Harga Produk" name="hargaProduk" type="number"/>
+              <TextAreaField label="Deskripsi" name="deskripsiProduk" type="text" />
+              <div className={styles.buttonFile}>
+                <FileFieldOutline name="file"/>
+              </div>
+            </div>
+            <div className={styles.buttonSubmit}>
+              <ButtonMediumOutline>Preview</ButtonMediumOutline>
+              <ButtonMedium>Terbitkan</ButtonMedium>
+            </div>
           </Form>
-          <FileFieldOutline name="file"/>
-            <Row className='d-flex justify-content-center'>
-              <Col>
-                <ButtonMediumOutline>Preview</ButtonMediumOutline>
-              </Col>
-              <Col>
-                <ButtonMedium>Terbitkan</ButtonMedium>
-              </Col>
-            </Row>
         </div>
       )}
     </Formik>

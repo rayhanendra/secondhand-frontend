@@ -20,7 +20,7 @@ function NavBarInfo() {
   return (
     <Navbar className={styles.navbar}>
       <button className={styles.backButton}>
-            <ArrowLeft size={30} color='#151515'/>
+        <ArrowLeft size={30} color='#151515'/>
       </button>
       <NavbarBrand className={styles.logo} href='/'/>
       <Navbar.Collapse className='justify-content-center'>

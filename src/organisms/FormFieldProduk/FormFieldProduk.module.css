@@ -1,7 +1,24 @@
 .formField {
   display: flex;
   flex-direction: column;
+  width: 60vw;
+}
+
+.form { 
+  display: flex;
+  flex-direction: column;
   align-items: center;
+}
+
+.buttonFile {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.buttonSubmit {
+  width: 60vw;
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 992px) {

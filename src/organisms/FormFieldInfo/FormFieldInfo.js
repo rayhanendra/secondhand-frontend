@@ -3,7 +3,9 @@ import { Formik, Form } from 'formik';
 import { TextField, SelectField,TextAreaField,FileField } from '../../components/atoms/FormInput/FormInput';
 import * as Yup from 'yup';
 import styles from './FormFieldInfo.module.css';
+import style from '../../components/atoms/BaseButton/BaseButton.module.css';
 import {ButtonLarge} from 'components/atoms/BaseButton/BaseButton';
+import {ArrowLeft} from 'react-bootstrap-icons';
 
 export const FormFieldInfo = () => {
   const validate = Yup.object({
@@ -36,12 +38,19 @@ export const FormFieldInfo = () => {
       {formik => (
         <div>
           <Form className={styles.formField}>
-            <FileField name="file"/>
-            <TextField label="Nama" name="nama" type="text"/>
-            <SelectField label="Kota" name="kota" type="text" />
-            <TextAreaField label="Alamat" name="alamat" type="text" />
-            <TextField label="No HP" name="noHP" type="number" />
-            <ButtonLarge>Simpan</ButtonLarge>
+            <div className={styles.buttonFile}>
+              <FileField name="file"/>
+            </div>
+            <button className={style.backButton}>
+              <ArrowLeft size={30} color='#151515'/>
+            </button>
+            <div className={styles.form}>
+              <TextField label="Nama" name="nama" type="text"/>
+              <SelectField label="Kota" name="kota" type="text" />
+              <TextAreaField label="Alamat" name="alamat" type="text" />
+              <TextField label="No HP" name="noHP" type="number" />
+              <ButtonLarge>Simpan</ButtonLarge>
+            </div>
           </Form>
         </div>
       )}

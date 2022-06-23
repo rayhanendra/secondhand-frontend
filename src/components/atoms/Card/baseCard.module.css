@@ -7,15 +7,15 @@
   border-radius: 16px;
   display: flex;
   flex-direction: row;
-  margin-left: 1.5vw;
 }
 
 .leftContent {
   width: 64px;
+  margin-right: 10px;
 }
 
 .rightContent {
-  padding-left: 0%;
+  padding-left: 0;
   margin-top: 1vh;
   width: 30.5vw;
 }
@@ -27,14 +27,13 @@
 }
 
 .cardNoBorder {
-  width: 90vw;
+  width: 35vw;
   height: min-content;
   background: #FFFFFF;
   margin-top: 3vh;
   border: none;
   display: flex;
   flex-direction: row;
-  margin-left: 1.5vw;
 }
 
 .foto {
@@ -75,81 +74,50 @@
   justify-content: flex-end;
 }
 
-@media only screen and (max-width: 1200px) {
-  .card {
-    width: 45vw;
-    height: min-content;
-    padding: 16px;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 16px;
-  }
-  
-  .cardNoBorder {
-    width: 90vw;
-    height: min-content;
-    background: #FFFFFF;
-    margin-top: 3vh;
-  }
-
-  .rightContent {
-    padding-left: 0%;
-    margin-top: 1vh;
-    width: 39.5vw;
-  }
-
-  .smallTime {
-    width: 28vw;
-  }
+.textTengah {
+  margin-top: 25px;
+  text-align: start;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 @media only screen and (max-width: 992px) {
   .card {
-    width: 90vw;
-    height: min-content;
-    padding: 16px;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 16px;
+    width: 95vw;
   }
-  
+
   .cardNoBorder {
-    width: 90vw;
-    height: min-content;
-    background: #FFFFFF;
-    margin-top: 3vh;
+    width: 95vw;
   }
 
   .rightContent {
-    padding-left: 0%;
-    margin-top: 1vh;
-    width: 81vw;
+    width: 87vw;
   }
 
   .smallTime {
-    width: 70vw;
+    width: 87vw;
   }
-  
+
   .smallText {
-    width: 20vw;
+    width: 30vw;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .button {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 3vh;
+  .card {
+    width: 90vw;
+  }
+
+  .cardNoBorder {
+    width: 90vw;
   }
 
   .rightContent {
-    padding-left: 0%;
-    margin-top: 1vh;
-    width: 80vw;
+    width: 79vw;
   }
 
   .smallTime {
-    width: 70vw;
+    width: 79vw;
   }
 
   .smallText {

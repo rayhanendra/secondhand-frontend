@@ -1,52 +1,51 @@
 .bagianKiri {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-top: 6vh;
 }
 
 .bagianKanan {
+  margin-top: 4vh;
+  padding-left: 0;
   display: flex;
   justify-content: flex-start;
-  margin-top: 4vh;
+  z-index: 1;
 }
 
 .bagianKananProduk {
   display: flex;
   justify-content: flex-start;
-  margin-top: 7vh;
+  margin-top: 5vh;
 }
 
 .bagianKananPenawar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   margin-top: 7vh;
 }
 
 .row {
-  width: 125vw;
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }
 
 @media only screen and (max-width: 992px) {
   .bagianKanan {
     display: flex;
-    justify-content: flex-start;
-    margin-left: 4vw;
+    justify-content: center;
     margin-top: 0;
   }
 
   .bagianKananProduk {
     display: flex;
     justify-content: flex-start;
-    margin-left: 4vw;
     margin-top: 7vh;
   }
 
   .bagianKananPenawar {
     display: flex;
     justify-content: flex-start;
-    margin-left: 6.5vw;
     margin-top: 7vh;
   }
 
@@ -54,5 +53,10 @@
     display: flex;
     justify-content: flex-end;
     margin-top: 0;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
   }
 }
