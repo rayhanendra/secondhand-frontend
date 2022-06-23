@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import NavBarInfo from 'organisms/Navbar/NavBarInfo';
+import NavBarInfo from 'organisms/NavBar/NavBarInfo';
 import {ArrowLeftCircle} from 'react-bootstrap-icons'
 import FormFieldInfo from '../organisms/FormFieldInfo/FormFieldInfo'
 import styles from '../components/atoms/BaseButton/BaseButton.module.css';

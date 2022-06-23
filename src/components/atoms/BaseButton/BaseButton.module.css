@@ -25,24 +25,23 @@
 
 .btn:active {
   background: #7126b5;
-  border: none;
+  border: 1px solid #7126b5;
   box-shadow: none;
 }
 .btn:hover {
   background: #7126b5;
-  border: none;
+  border: 1px solid #7126b5;
   box-shadow: none;
 }
 .btn:focus {
   background: #7126b5;
-  border: none;
+  border: 1px solid #7126b5;
   box-shadow: none;
 }
 .btn:checked {
-  border: none;
+  border: 1px solid #7126b5;
   box-shadow: none;
 }
-/* .btn: */
 
 .btn-check:active {
   background: #7126b5;
@@ -56,6 +55,13 @@
 .light {
   color: #7126b5;
   background: #e2d4f0;
+  border: 1px solid #e2d4f0;
+}
+
+.outlined {
+  color: #7126b5;
+  background: white;
+  border: 1px solid #7126b5;
 }
 
 .buttonLarge {

@@ -12,6 +12,7 @@ function BaseButton(props) {
         [styles.btn],
         [variant === 'primary' && styles.primary],
         [variant === 'secondary' && styles.light],
+        [variant === 'outlined' && styles.outlined],
         [active && styles.primary],
         'btn-check:active',
       ]}
@@ -28,7 +29,10 @@ export function ButtonLarge(props) {
 
   return (
     <Button
-      className={[styles.buttonLarge, variant === 'primary' ? styles.primary : '']}
+      className={[
+        styles.buttonLarge,
+        variant === 'primary' ? styles.primary : '',
+      ]}
     >
       {children}
     </Button>
@@ -40,7 +44,10 @@ export function ImageButton(props) {
 
   return (
     <Button
-      className={[styles.imageButton, variant === 'primary' ? styles.primary : '']}
+      className={[
+        styles.imageButton,
+        variant === 'primary' ? styles.primary : '',
+      ]}
     >
       {children}
     </Button>

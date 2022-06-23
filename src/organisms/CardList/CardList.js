@@ -1,6 +1,5 @@
 import BaseCard from 'components/atoms/BaseCard/BaseCard';
 import React from 'react';
-// import { Row } from 'react-bootstrap';
 import uuid from 'utils/uuid';
 
 function CardList() {
