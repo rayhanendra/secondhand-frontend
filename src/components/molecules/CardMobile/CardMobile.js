@@ -1,13 +1,11 @@
 import React from 'react';
-import styles from '../CardMobile/CardMobile.module.css';
+import styles from './CardMobile.module.css';
 
 function CardMobile() {
-  const data = [{}];
-
   return (
     <div>
       <div className={styles.container}>
-        <div className={styles.image}></div>
+        <div className={styles.image} />
         <div className="d-flex flex-column g-2 flex-grow-1">
           <div className={styles.desc}>
             <div

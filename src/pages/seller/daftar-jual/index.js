@@ -3,7 +3,6 @@ import AccountBox from 'organisms/AccountBox/AccountBox';
 import CategoryBox from 'organisms/CategoryBox/CategoryBox';
 import NavBar from 'organisms/NavBar/NavBar';
 import ProductCard from 'organisms/ProductCard/ProductCard';
-import ProductListMobile from 'organisms/ProductListMobile/ProductListMobile';
 import React from 'react';
 import { Container } from 'react-bootstrap';
 
