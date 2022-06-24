@@ -7,8 +7,7 @@
         "plugin:react/recommended",
         "airbnb",
         "prettier",
-        "next",
-        "next/babel"
+        "next"
     ],
     "parserOptions": {
         "ecmaFeatures": {

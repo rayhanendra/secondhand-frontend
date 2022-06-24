@@ -5,31 +5,26 @@ import { Stack } from 'react-bootstrap';
 import uuid from 'utils/uuid';
 import style from './Filter.module.css';
 
-function Filter() {
+function Filter(props) {
+  const { options = [] } = props;
   const [activeIndex, setActiveIndex] = useState('');
 
-  const filter = [
-    { label: 'Semua', value: 'semua' },
-    { label: 'Hobi', value: 'hobi' },
-    { label: 'Kendaraan', value: 'kendaraan' },
-    { label: 'Baju', value: 'baju' },
-    { label: 'Elektronik', value: 'elektronik' },
-    { label: 'Kesehatan', value: 'kesehatan' },
-  ];
+  const handleActive = (index) => {
+    setActiveIndex(index);
+  };
 
   return (
     <div>
-      <h6 className="fw-bold mb-3 px-3">Telusuri Kategori</h6>
       <Stack
         direction="horizontal"
         gap={3}
         className={['overflow-auto px-3', [style.scrollbar]]}
       >
-        {filter.map(({ label }, index) => (
+        {options.map(({ label }, index) => (
           <BaseButton
             key={uuid()}
             variant="secondary"
-            onClick={() => setActiveIndex(index)}
+            onClick={() => handleActive(index)}
             active={index === activeIndex}
           >
             {index === activeIndex ? (
