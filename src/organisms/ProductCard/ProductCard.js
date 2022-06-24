@@ -3,8 +3,6 @@ import BaseCard from 'components/atoms/BaseCard/BaseCard';
 import React from 'react';
 import uuid from 'utils/uuid';
 
-const data = [];
-
 function ProductCard() {
   return (
     <div className="row">

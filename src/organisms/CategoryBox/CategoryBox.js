@@ -4,14 +4,14 @@ import {
   faBox,
   faDollarSign,
   faHeart,
+  faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import styles from './CategoryBox.module.css';
 
 function CategoryBox() {
   return (
     <div className={styles['category-box']}>
-      <div className={styles['title']}>Kategori</div>
+      <div className={styles.title}>Kategori</div>
       <div className="d-flex flex-column gap-3 w-100">
         <div className="d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center gap-3">
@@ -20,7 +20,7 @@ function CategoryBox() {
           </div>
           <FontAwesomeIcon icon={faChevronRight} />
         </div>
-        <div className="border-bottom"></div>
+        <div className="border-bottom" />
         <div className="d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center gap-3">
             <FontAwesomeIcon icon={faHeart} />
@@ -28,7 +28,7 @@ function CategoryBox() {
           </div>
           <FontAwesomeIcon icon={faChevronRight} />
         </div>
-        <div className="border-bottom"></div>
+        <div className="border-bottom" />
         <div className="d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center gap-3">
             <FontAwesomeIcon icon={faDollarSign} />
