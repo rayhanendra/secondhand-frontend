@@ -16,7 +16,7 @@ import images3 from 'images/wifi.png';
 import images4 from 'images/cellular.png';
 import images5 from 'images/battery.png';
 import images6 from 'images/fi_arrow-left.png';
-import styles from 'styles/login.module.css';
+import styles from 'styles/login-register.module.css';
 import Link from 'next/link';
 
 export default function Register() {

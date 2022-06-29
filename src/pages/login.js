@@ -8,6 +8,7 @@ import {
   Nav,
   Navbar,
 } from 'react-bootstrap';
+// import { Search } from "react-bootstrap-icons";
 import Image from 'next/image';
 import Images from 'images/bannerimg.png';
 import images1 from 'images/bluetooth.png';
@@ -16,7 +17,7 @@ import images3 from 'images/wifi.png';
 import images4 from 'images/cellular.png';
 import images5 from 'images/battery.png';
 import images6 from 'images/fi_arrow-left.png';
-import styles from 'styles/login.module.css';
+import styles from 'styles/login-register.module.css';
 import Link from 'next/link';
 
 export default function Login() {

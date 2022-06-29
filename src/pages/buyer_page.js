@@ -115,13 +115,8 @@ export default function Buyerproduct() {
                 <br />
                 <h6>Rp. 250.000</h6>
                 <br />
-                <Button className={styles.btnseller1} type="submit">
-                  Terbitkan
-                </Button>{' '}
-                <br />
-                <br />
-                <Button className={styles.btnseller2} type="submit">
-                  Edit
+                <Button className={styles.btnbuyer} type="submit">
+                  Saya tertarik dan ingin Tawar
                 </Button>{' '}
               </Col>
             </Col>

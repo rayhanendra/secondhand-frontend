@@ -1,0 +1,145 @@
+.all_page {
+  margin: 0px;
+  padding: 0px;
+}
+.leftcol1 {
+  padding-left: 150px;
+}
+.leftcol2 {
+  margin-top: 30px;
+  padding-right: 670px;
+  padding-left: 140px;
+}
+.rightcol1 {
+  padding-right: 100px;
+  padding-left: 50px;
+  padding-top: 2%;
+}
+.carousel {
+  padding-top: 3%;
+  margin-top: 3%;
+}
+.borderbox {
+  padding: 2%;
+  margin: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 16px;
+  padding-left: 20px;
+}
+.btnbuyer {
+  background-color: #7126b5;
+  padding-inline: 110px;
+  border-radius: 15px;
+}
+.btnseller1 {
+  background-color: #7126b5;
+  padding-inline: 190px;
+  border-radius: 15px;
+}
+.btnseller2 {
+  background-color: #7126b5;
+  padding-inline: 213px;
+  border-radius: 15px;
+}
+.h5 {
+  padding-left: 15px;
+  padding-top: 15px;
+  display: inline-flex;
+  position: absolute;
+}
+.p1 {
+  color: #8a8a8a;
+  display: inline;
+  margin-left: 16px;
+  position: absolute;
+  padding-top: 45px;
+}
+.p2 {
+  color: #8a8a8a;
+}
+
+/* AWAL NAVBAR SEARCH */
+.btnsearch {
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+.iconsearch {
+  width: 24px;
+  height: 24px;
+  color: #8a8a8a;
+  align-items: center;
+}
+.search {
+  display: flex;
+  margin-left: 24px;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 16px;
+  width: 444px;
+  height: 48px;
+  left: 260px;
+  top: 18px;
+  background: #eeeeee;
+  border-radius: 16px;
+  border: none;
+}
+.formsearch {
+  background: transparent;
+  flex: 1;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.formsearch:hover {
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: #8a8a8a;
+}
+/* AKHIR NAVBAR SEARCH */
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .col {
+    width: fit-content;
+    height: fit-content;
+  }
+  .leftcol1 {
+    align-items: center;
+    display: flex;
+    padding-left: 10px;
+    margin: 0px;
+  }
+  .rightcol1 {
+    align-items: center;
+    display: flex;
+    padding-left: 10px;
+    margin: 0px;
+  }
+  .info_product {
+    padding: 1%;
+    margin: 1%;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 6px;
+    padding-left: 2px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .btnlogin {
+    background-color: #7126b5;
+    width: fit-content;
+    height: fit-content;
+  }
+  .leftcol2 {
+    width: fit-content;
+    height: fit-content;
+  }
+  /* .rightcol2{
+    display: none;
+  } */
+}
