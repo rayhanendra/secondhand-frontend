@@ -8,15 +8,7 @@ import FaButton from 'components/atoms/FaButton/FaButton';
 import BsCarousel from 'organisms/Carousel.js/BaseCarousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-
-const optionsFilter = [
-  { label: 'Semua', value: 'semua' },
-  { label: 'Hobi', value: 'hobi' },
-  { label: 'Kendaraan', value: 'kendaraan' },
-  { label: 'Baju', value: 'baju' },
-  { label: 'Elektronik', value: 'elektronik' },
-  { label: 'Kesehatan', value: 'kesehatan' },
-];
+import { optionsFilter } from 'utils/constants';
 
 export default function Home() {
   return (

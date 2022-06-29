@@ -1,20 +1,16 @@
-import Filter from 'components/molecules/Filter/Filter';
 import AccountBox from 'organisms/AccountBox/AccountBox';
 import CategoryBox from 'organisms/CategoryBox/CategoryBox';
 import NavBar from 'organisms/NavBar/NavBar';
-import ProductCard from 'organisms/ProductCard/ProductCard';
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { Filter } from 'react-bootstrap-icons';
+import { optionsCategory } from 'utils/constants';
 
-const optionsFilter = [
-  { label: 'Produk', value: 'product' },
-  { label: 'Diminati', value: 'wanted' },
-  { label: 'Terjual', value: 'sold' },
-];
+function TemplateDaftarJual(props) {
+  const { children } = props;
 
-function IndexPage() {
   return (
-    <div>
+    <>
       {/* Notes: Navbar sementara */}
       <NavBar />
       <Container fluid="xl" className="p-0 py-4">
@@ -23,19 +19,17 @@ function IndexPage() {
           <AccountBox />
         </div>
         <div className="py-2 mb-md-4 d-lg-none">
-          <Filter options={optionsFilter} />
+          <Filter options={optionsCategory} />
         </div>
         <div className="d-flex">
           <div className="p-3 d-none d-lg-block">
             <CategoryBox />
           </div>
-          <div className="mb-4 px-3">
-            <ProductCard />
-          </div>
+          <div className="mb-4 px-3 w-100">{children}</div>
         </div>
       </Container>
-    </div>
+    </>
   );
 }
 
-export default IndexPage;
+export default TemplateDaftarJual;

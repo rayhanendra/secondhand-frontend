@@ -12,8 +12,16 @@
   border-radius: 16px;
 }
 
+.icon {
+  width: 16px;
+}
+
 .title {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
+}
+
+.border-container:last-child {
+  display: none;
 }
