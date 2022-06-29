@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './CardMobile.module.css';
 
-function CardMobile() {
+function CardMobile(props) {
+  const { item, type = 'diminati' } = props;
+
   return (
     <div>
       <div className={styles.container}>
@@ -14,14 +16,16 @@ function CardMobile() {
                 styles.body,
               ]}
             >
-              <div className="flex-grow-1">Penawaran produk</div>
-              <div className="flex-grow-0">20 Apr, 14:04</div>
+              <div className="flex-grow-1">
+                {type === 'diminati' ? 'Penawaran Produk' : 'Produk Terjual'}
+              </div>
+              <div className="flex-grow-0">{item?.offerDate}</div>
             </div>
           </div>
           <div className={styles.body}>
-            <div>Jam Tangan Casio</div>
-            <div>Rp 250.000</div>
-            <div>Ditawar Rp 200.000</div>
+            <div>{item?.title}</div>
+            <div>Rp {item?.price}</div>
+            <div>Ditawar Rp {item?.offerPrice}</div>
           </div>
         </div>
       </div>

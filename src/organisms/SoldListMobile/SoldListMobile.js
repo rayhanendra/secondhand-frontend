@@ -2,8 +2,8 @@ import CardMobile from 'components/molecules/CardMobile/CardMobile';
 import React from 'react';
 import uuid from 'utils/uuid';
 
-function ProductListMobile() {
-  const productData = [
+function SoldListMobile() {
+  const soldData = [
     {
       image: '',
       offerDate: '20 Apr, 14:04',
@@ -26,14 +26,13 @@ function ProductListMobile() {
       offerPrice: 200000,
     },
   ];
-
   return (
     <div className="d-flex flex-column">
-      {productData.map((item) => (
-        <CardMobile key={uuid()} item={item} type="diminati" />
+      {soldData.map((item) => (
+        <CardMobile key={uuid()} item={item} type="terjual" />
       ))}
     </div>
   );
 }
 
-export default ProductListMobile;
+export default SoldListMobile;
