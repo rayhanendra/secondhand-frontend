@@ -19,7 +19,7 @@ import Images5 from 'images/Rectangle 134.png';
 import Images6 from 'images/test444.png';
 import Images7 from 'images/test555.png';
 import Images8 from 'images/testi1.jpeg';
-import styles from 'styles/buyer-seller-page.module.css';
+import styles from 'styles/buyer-page.module.css';
 
 export default function Buyerproduct() {
   return (
@@ -115,13 +115,8 @@ export default function Buyerproduct() {
                 <br />
                 <h6>Rp. 250.000</h6>
                 <br />
-                <Button className={styles.btnseller1} type="submit">
-                  Terbitkan
-                </Button>{' '}
-                <br />
-                <br />
-                <Button className={styles.btnseller2} type="submit">
-                  Edit
+                <Button className={styles.btnbuyer} type="submit">
+                  Tawar
                 </Button>{' '}
               </Col>
             </Col>
