@@ -20,6 +20,7 @@
     "react-bootstrap-icons": "^1.8.2",
     "react-dom": "18.1.0",
     "react-router-dom": "^6.3.0",
+    "usehooks-ts": "^2.6.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {

@@ -34,6 +34,7 @@
   border: none;
   display: flex;
   flex-direction: row;
+  margin-bottom: 32px;
 }
 
 .foto {

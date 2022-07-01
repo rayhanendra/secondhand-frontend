@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { ErrorMessage, useField } from 'formik';
 import { Button, Form } from 'react-bootstrap'; 
 import { Camera, Plus } from 'react-bootstrap-icons';
@@ -98,3 +98,53 @@ export function FileFieldOutline({ label, ...props }) {
     </div>
   )
 }
+
+export const RadioForm = () => {
+  const [item, setItem] = useState({ kindOfStand: "", another: "another" });
+
+  const { kindOfStand } = item;
+
+  const handleChange = e => {
+    e.persist();
+    console.log(e.target.value);
+
+    setItem(prevState => ({
+      ...prevState,
+      kindOfStand: e.target.value
+    }));
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    alert(`${kindOfStand}`);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <Form.Group controlId="kindOfStand">
+        <Form.Check
+          value="BerhasilTerjual"
+          type="radio"
+          aria-label="radio 1"
+          label="Berhasil Terjual"
+          onChange={handleChange}
+          checked={kindOfStand === "BerhasilTerjual"}
+        />
+        <div className={styles.teksModal}>
+          Kamu telah sepakat menjual produk ini kepada pembeli
+        </div>
+        <Form.Check
+          value="BatalkanTransaksi"
+          type="radio"
+          aria-label="radio 2"
+          label="Batalkan Transaksi"
+          onChange={handleChange}
+          checked={kindOfStand === "BatalkanTransaksi"}
+        />
+        <div className={styles.teksModal}>
+          Kamu membatalkan transaksi produk ini dengan pembeli
+        </div>
+      </Form.Group>
+    </form>
+  );
+};

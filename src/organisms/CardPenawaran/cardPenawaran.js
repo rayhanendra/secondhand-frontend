@@ -1,5 +1,5 @@
 import React from 'react';
-import {CardNamaPembeli, CardPenawaranProduk} from 'components/atoms/Card/baseCard';
+import {CardNamaPembeli, CardPenawaranProduk, CardPenawaranProdukAcc} from 'components/atoms/Card/baseCard';
 import styles from './cardPenawaran.module.css';
 import style from '../../components/atoms/BaseButton/BaseButton.module.css';
 import {ArrowLeft} from 'react-bootstrap-icons';
@@ -15,6 +15,12 @@ export default function CardPenawaran() {
       </div>
       <div className={styles.cardBawah}>
         <CardPenawaranProduk/>
+      </div>
+      <div className={styles.cardAtas}>
+        <CardNamaPembeli/>
+      </div>
+      <div className={styles.cardBawah}>
+        <CardPenawaranProdukAcc/>
       </div>
     </div>
   );

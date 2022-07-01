@@ -20,7 +20,7 @@
 
 .buttonLarge {
   width: 40vw;
-  height: 6vh;
+  height: 7vh;
   border-radius: 16px;
   padding: 12px 24px;
   margin-top: 2vh;
@@ -44,8 +44,17 @@
 }
 
 .buttonCard {
-  width: 158px;
-  height: 36px;
+  width: max-content;
+  height: 42px;
+  border-radius: 16px;
+  padding: 8px 24px;
+  margin-top: 1vh;
+  margin-left: 1.5vw;
+}
+
+.buttonModal {
+  width: 296px;
+  height: 40px;
   border-radius: 16px;
   padding: 8px 24px;
   margin-top: 1vh;
@@ -69,7 +78,7 @@
 
   .buttonLarge {
     width: 95vw;
-    height: 7vh;
+    height: 8vh;
     border-radius: 16px;
     padding: 12px 24px;
     margin-top: 2vh;
