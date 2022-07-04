@@ -2,7 +2,7 @@
   width: 35vw;
   height: min-content;
   padding: 16px;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
   border-radius: 16px;
   display: flex;
@@ -20,16 +20,21 @@
   width: 30.5vw;
 }
 
+.content {
+  margin-bottom: 15px;
+}
+
 .title {
   display: flex;
   flex-direction: row;
   width: auto;
+  margin-bottom: 1rem;
 }
 
 .cardNoBorder {
   width: 35vw;
   height: min-content;
-  background: #FFFFFF;
+  background: #ffffff;
   margin-top: 3vh;
   border: none;
   display: flex;
@@ -51,7 +56,6 @@
 .mediumText {
   font-weight: 500;
   font-size: 16px;
-  line-height: 16px;
 }
 
 .smallText {
@@ -73,6 +77,19 @@
 .button {
   display: flex;
   justify-content: flex-end;
+}
+
+.btn {
+  margin-left: 10px;
+}
+
+.alertFixed {
+  position: absolute;
+  width: 500px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .textTengah {

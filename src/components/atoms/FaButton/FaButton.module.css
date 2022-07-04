@@ -1,0 +1,50 @@
+.btn-container {
+  position: fixed;
+  bottom: 28px;
+  z-index: 999;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 14px 16px;
+  gap: 8px;
+  border-radius: 12px;
+  height: 48px;
+  background: #7126b5 !important;
+  border: none !important;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn.focus,
+.btn:focus {
+  color: #fff;
+  outline: none;
+  box-shadow: none;
+}
+.btn:hover {
+  color: #fff;
+  outline: none;
+  box-shadow: none;
+}
+.btn.active,
+.btn:active {
+  color: #fff;
+  outline: none;
+}
+.btn.active.focus,
+.btn.active:focus,
+.btn.active:hover,
+.btn:active.focus,
+.btn:active:focus,
+.btn:active:hover {
+  color: #fff;
+  outline: none;
+  box-shadow: none;
+}

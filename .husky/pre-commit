@@ -1,2 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
+
+yarn lint:write && npx lint-staged
+# Mohon jangan di apa-apakan ini demi kebersihan codingan
