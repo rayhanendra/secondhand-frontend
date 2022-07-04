@@ -60,7 +60,7 @@ export function CardPenawaranProduk() {
                 <ButtonCard>
                   <div
                     onClick={() => setModalShow(true)}
-                    onKeyDown={setModalShow(true)}
+                    onKeyDown={() => setModalShow(true)}
                     aria-hidden="true"
                   >
                     Terima
@@ -104,7 +104,7 @@ export function CardPenawaranProdukAcc() {
               <ButtonCardOutlineStatus>
                 <div
                   onClick={() => setModalShow(true)}
-                  onKeyDown={setModalShow(true)}
+                  onKeyDown={() => setModalShow(true)}
                   aria-hidden="true"
                 >
                   Status

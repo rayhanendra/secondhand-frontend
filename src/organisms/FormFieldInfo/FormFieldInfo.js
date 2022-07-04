@@ -1,18 +1,18 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
+import { ButtonLarge } from 'components/atoms/BaseButton/BaseButton';
+import { ArrowLeft } from 'react-bootstrap-icons';
 import {
   TextField,
   SelectField,
   TextAreaField,
   FileField,
 } from '../../components/atoms/FormInput/FormInput';
-import * as Yup from 'yup';
 import styles from './FormFieldInfo.module.css';
 import style from '../../components/atoms/BaseButton/BaseButton.module.css';
-import { ButtonLarge } from 'components/atoms/BaseButton/BaseButton';
-import { ArrowLeft } from 'react-bootstrap-icons';
 
-export const FormFieldInfo = () => {
+export default function FormFieldInfo() {
   const validate = Yup.object({
     nama: Yup.string()
       .min(6, 'Must be 6 characters or less')
@@ -36,13 +36,13 @@ export const FormFieldInfo = () => {
         console.log(values);
       }}
     >
-      {(formik) => (
+      {() => (
         <div>
           <Form className={styles.formField}>
             <div className={styles.buttonFile}>
               <FileField name="file" />
             </div>
-            <button className={style.backButton}>
+            <button type="button" className={style.backButton}>
               <ArrowLeft size={30} color="#151515" />
             </button>
             <div className={styles.form}>
@@ -57,4 +57,4 @@ export const FormFieldInfo = () => {
       )}
     </Formik>
   );
-};
+}
