@@ -1,4 +1,4 @@
-import React from 'react';
+import { React } from 'react';
 import Button from 'react-bootstrap/Button';
 import styles from './BaseButton.module.css';
 
@@ -21,7 +21,6 @@ function BaseButton(props) {
     </Button>
   );
 }
-
 export default BaseButton;
 
 export function ButtonLarge(props) {
@@ -39,6 +38,36 @@ export function ButtonLarge(props) {
   );
 }
 
+export function ButtonMedium(props) {
+  const { variant = 'primary', children } = props;
+
+  return (
+    <Button
+      className={[
+        styles.buttonMedium,
+        variant === 'primary' ? styles.primary : '',
+      ]}
+    >
+      {children}
+    </Button>
+  );
+}
+
+export function ButtonMediumOutline(props) {
+  const { variant = 'outline', children } = props;
+
+  return (
+    <Button
+      className={[
+        styles.buttonMedium,
+        variant === 'outline' ? styles.outline : '',
+      ]}
+    >
+      {children}
+    </Button>
+  );
+}
+
 export function ImageButton(props) {
   const { variant = 'primary', children } = props;
 
@@ -46,6 +75,65 @@ export function ImageButton(props) {
     <Button
       className={[
         styles.imageButton,
+        variant === 'primary' ? styles.primary : '',
+      ]}
+    >
+      {children}
+    </Button>
+  );
+}
+
+export function ButtonCard(props) {
+  const { variant = 'primary', children } = props;
+
+  return (
+    <Button
+      className={[
+        styles.buttonCard,
+        variant === 'primary' ? styles.primary : '',
+      ]}
+    >
+      {children}
+    </Button>
+  );
+}
+
+export function ButtonCardOutline(props) {
+  const { variant = 'outline', children } = props;
+
+  return (
+    <Button
+      className={[
+        styles.buttonCard,
+        variant === 'outline' ? styles.outline : '',
+      ]}
+    >
+      {children}
+    </Button>
+  );
+}
+
+export function ButtonCardOutlineStatus(props) {
+  const { variant = 'outline', children } = props;
+
+  return (
+    <Button
+      className={[
+        styles.buttonCard,
+        variant === 'outline' ? styles.outline : '',
+      ]}
+    >
+      {children}
+    </Button>
+  );
+}
+
+export function ButtonCardNoModal(props) {
+  const { variant = 'primary', children } = props;
+  return (
+    <Button
+      className={[
+        styles.buttonCard,
         variant === 'primary' ? styles.primary : '',
       ]}
     >

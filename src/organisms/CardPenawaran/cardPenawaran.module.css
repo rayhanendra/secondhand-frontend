@@ -1,0 +1,23 @@
+.cardAtas {
+  display: flex;
+  justify-content: center;
+  width: 50vw;
+  flex-direction: row;
+}
+
+.cardBawah {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 992px) {
+  .cardAtas {
+    width: 95vw;
+  }
+}
