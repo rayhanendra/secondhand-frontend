@@ -1,0 +1,62 @@
+.bagianKiri {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 6vh;
+}
+
+.bagianKanan {
+  margin-top: 4vh;
+  padding-left: 0;
+  display: flex;
+  justify-content: flex-start;
+  z-index: 1;
+}
+
+.bagianKananProduk {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5vh;
+}
+
+.bagianKananPenawar {
+  display: flex;
+  justify-content: center;
+  margin-top: 7vh;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 992px) {
+  .bagianKanan {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .bagianKananProduk {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 7vh;
+  }
+
+  .bagianKananPenawar {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 7vh;
+  }
+
+  .bagianKiri {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+}
