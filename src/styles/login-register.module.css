@@ -4,13 +4,13 @@
   padding: 0;
 }
 
-.banner_text h2 {
+.textimg {
   color: white;
   top: 20vw;
   width: 100px;
   font-weight: 700;
-  position: absolute;
   margin-left: 50px;
+  position: absolute !important;
 }
 
 .login {
@@ -56,7 +56,6 @@
     padding: 5px;
     margin: 5px;
   }
-
   .login {
     margin-top: 30vh;
   }

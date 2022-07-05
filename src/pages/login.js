@@ -8,7 +8,6 @@ import {
   Nav,
   Navbar,
 } from 'react-bootstrap';
-// import { Search } from "react-bootstrap-icons";
 import Image from 'next/image';
 import Images from 'images/bannerimg.png';
 import images1 from 'images/bluetooth.png';
@@ -62,14 +61,13 @@ export default function Login() {
 
           <Col className={styles.banner_text}>
             <Image
-              className={styles.banner}
               src={Images}
               width={700}
               height={730}
               layout="responsive"
               alt="banner-login"
             />
-            <h2> Second Hand.</h2>
+            <h2 className={styles.textimg}> Second Hand.</h2>
           </Col>
           <Col className={styles.login}>
             <Form>
