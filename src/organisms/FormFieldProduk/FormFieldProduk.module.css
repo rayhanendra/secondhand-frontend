@@ -4,7 +4,7 @@
   width: 60vw;
 }
 
-.form { 
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;

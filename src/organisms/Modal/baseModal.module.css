@@ -23,14 +23,14 @@
 }
 
 .content {
-  background: #EEEEEE;
+  background: #eeeeee;
   border-radius: 16px;
 }
 
 .leftContent {
   width: 64px;
   display: flex;
-  margin-bottom: 5px
+  margin-bottom: 5px;
 }
 
 .foto {
@@ -65,5 +65,4 @@
 }
 
 .content {
-  
 }

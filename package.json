@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "test": "jest",
     "start": "next start",
     "lint": "next lint",
     "lint:write": "next lint --cache --fix",
@@ -44,5 +45,9 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/rayhanendra/secondhand-frontend.git",
+  "author": "Difarmdn <difaramadan43@gmail.com>",
+  "license": "MIT"
 }
