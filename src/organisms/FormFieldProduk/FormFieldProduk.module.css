@@ -4,7 +4,7 @@
   width: 60vw;
 }
 
-.form { 
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,6 +26,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1vh;
+    height: 81vh;
+  }
+
+  .buttonSubmit {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 18vh;
   }
 }

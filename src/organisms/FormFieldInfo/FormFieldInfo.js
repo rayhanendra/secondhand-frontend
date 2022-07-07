@@ -50,6 +50,8 @@ export default function FormFieldInfo() {
               <SelectField label="Kota" name="kota" type="text" />
               <TextAreaField label="Alamat" name="alamat" type="text" />
               <TextField label="No HP" name="noHP" type="number" />
+            </div>
+            <div className={styles.btn}>
               <ButtonLarge>Simpan</ButtonLarge>
             </div>
           </Form>

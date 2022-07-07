@@ -142,3 +142,13 @@
     width: 30vw;
   }
 }
+
+@media only screen and (max-width: 576px) {
+  .cardNoBorder {
+    width: 95vw;
+  }
+
+  .smallText {
+    width: 50vw;
+  }
+}
