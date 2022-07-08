@@ -6,9 +6,9 @@ import AuthService from '../../services/auth.service';
 
 export const register = createAsyncThunk(
   'auth/register',
-  async ({ name, email, password }, thunkAPI) => {
+  async ({ data }, thunkAPI) => {
     try {
-      const response = await AuthService.register(name, email, password);
+      const response = await AuthService.register(data);
       return { user: response.data.user };
     } catch (error) {
       // const message =
@@ -24,9 +24,9 @@ export const register = createAsyncThunk(
 
 export const login = createAsyncThunk(
   'auth/login',
-  async ({ email, password }, thunkAPI) => {
+  async ({ data }, thunkAPI) => {
     try {
-      const response = await AuthService.login(email, password);
+      const response = await AuthService.login(data);
       return { user: response.data.user };
     } catch (error) {
       // const message =

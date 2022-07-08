@@ -4,6 +4,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/',
+        destination: '/home',
+        permanent: true,
+      },
+      {
         source: '/seller/daftar-jual',
         destination: '/seller/daftar-jual/semua-produk',
         permanent: true,

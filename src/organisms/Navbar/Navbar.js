@@ -3,6 +3,7 @@ import Search from 'components/atoms/Search/Search';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import IconLogin from 'images/iconLogin';
+import Link from 'next/link';
 
 function NavBar() {
   return (
@@ -14,14 +15,20 @@ function NavBar() {
             <Navbar.Brand href="#home">Second Hand</Navbar.Brand>
             <Nav>
               <Nav.Link href="#deets" className="d-lg-none">
-                Masuk
+                <BaseButton>
+                  <Link href="/login">Masuk</Link>
+                </BaseButton>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
           <Search />
           <Nav.Link href="#deets" className="d-none d-lg-block">
             <BaseButton variant="primary">
-              <IconLogin /> Masuk
+              <Link href="/login">
+                <div>
+                  <IconLogin /> Masuk
+                </div>
+              </Link>
             </BaseButton>
           </Nav.Link>
         </Container>
