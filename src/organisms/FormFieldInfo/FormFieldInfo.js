@@ -33,6 +33,7 @@ export default function FormFieldInfo() {
       }}
       validationSchema={validate}
       onSubmit={(values) => {
+        // eslint-disable-next-line no-console
         console.log(values);
       }}
     >
