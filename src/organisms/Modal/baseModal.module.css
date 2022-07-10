@@ -64,5 +64,7 @@
   line-height: 0px;
 }
 
-.content {
+.radioForm {
+  display: flex;
+  flex-direction: row;
 }

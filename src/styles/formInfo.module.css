@@ -7,9 +7,7 @@
 .bagianKanan {
   margin-top: 4vh;
   padding-left: 0;
-  display: flex;
-  justify-content: flex-start;
-  z-index: 1;
+  width: 40vw;
 }
 
 .bagianKananProduk {
@@ -26,15 +24,25 @@
 
 .row {
   display: flex;
+  justify-content: center;
+}
+
+.btnInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnProduk {
+  display: flex;
   flex-direction: row;
+  width: auto;
   justify-content: center;
 }
 
 @media only screen and (max-width: 992px) {
   .bagianKanan {
-    display: flex;
-    justify-content: center;
-    margin-top: 0;
+    width: 90vw;
   }
 
   .bagianKananProduk {
