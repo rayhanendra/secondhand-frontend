@@ -1,4 +1,21 @@
 .search {
   border-radius: 16px;
   background: #eeeeee;
+  width: 444px;
+}
+
+@media screen and (max-width: 768px) {
+  .search {
+    border-radius: 16px;
+    background: #eeeeee;
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .search {
+    border-radius: 16px;
+    background: #eeeeee;
+    width: auto;
+  }
 }

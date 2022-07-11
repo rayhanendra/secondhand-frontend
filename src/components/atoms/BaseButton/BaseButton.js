@@ -3,7 +3,13 @@ import Button from 'react-bootstrap/Button';
 import styles from './BaseButton.module.css';
 
 function BaseButton(props) {
-  const { variant = 'primary', type = 'submit', active, children } = props;
+  const {
+    variant = 'primary',
+    type = 'submit',
+    active,
+    children,
+    disabled = false,
+  } = props;
 
   return (
     <Button
@@ -17,6 +23,7 @@ function BaseButton(props) {
         [active && styles.primary],
         'btn-check:active',
       ]}
+      disabled={disabled}
     >
       {children}
     </Button>
