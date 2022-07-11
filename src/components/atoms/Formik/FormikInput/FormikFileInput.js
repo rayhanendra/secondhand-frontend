@@ -1,6 +1,6 @@
 import React from 'react';
-import { Field } from 'formik';
 import { useRouter } from 'next/router';
+import { Camera } from 'react-bootstrap-icons';
 import styles from './FormikInput.module.css';
 
 const ButtonStyle = () => {
@@ -13,18 +13,11 @@ const ButtonStyle = () => {
 };
 
 function FormikFileInput(props) {
-  const { name, label, formikProps, ...rest } = props;
+  const { name, label, id, formikProps, ...rest } = props;
   return (
     <div className={ButtonStyle()}>
-      <Field
-        name={name}
-        {...rest}
-        style={{
-          opacity: '0',
-          width: '96px',
-          height: '96px',
-        }}
-      />
+      <Camera size={30} color="#7126B5" className={styles.icon} />
+      <input id={id} name={name} {...rest} className={styles.iconBtn} />
     </div>
   );
 }

@@ -34,3 +34,18 @@
   border: 1px dashed #7126b5;
   background: white;
 }
+
+.iconBtn {
+  opacity: 0;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: -60px;
+}
+
+.icon {
+  margin-top: 32px;
+  margin-left: 32px;
+}

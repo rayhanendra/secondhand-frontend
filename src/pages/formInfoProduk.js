@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Stack } from 'react-bootstrap';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
@@ -46,6 +46,59 @@ function FormInfoAccount() {
   const onSubmit = (values) => {
     console.log('Form data', values);
   };
+
+  // Image Reader Sebelum Upload
+  const [imageFiles, setImageFiles] = useState([]);
+  const [images, setImages] = useState([]);
+  const imageTypeRegex = /image\/(png|jpg|jpeg)/gm;
+
+  const changeHandler = (e) => {
+    const { files } = e.target;
+    const validImageFiles = [];
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      if (file.type.match(imageTypeRegex)) {
+        validImageFiles.push(file);
+      }
+    }
+    if (validImageFiles.length) {
+      setImageFiles(validImageFiles);
+      return;
+    }
+    alert('Selected images are not of valid type!');
+  };
+
+  useEffect(() => {
+    // eslint-disable-next-line no-shadow
+    const images = [];
+    const fileReaders = [];
+    let isCancel = false;
+    if (imageFiles.length) {
+      imageFiles.forEach((file) => {
+        const fileReader = new FileReader();
+        fileReaders.push(fileReader);
+        fileReader.onload = (e) => {
+          const { result } = e.target;
+          if (result) {
+            images.push(result);
+          }
+          if (images.length === imageFiles.length && !isCancel) {
+            setImages(images);
+          }
+        };
+        fileReader.readAsDataURL(file);
+      });
+    }
+    return () => {
+      isCancel = true;
+      fileReaders.forEach((fileReader) => {
+        if (fileReader.readyState === 1) {
+          fileReader.abort();
+        }
+      });
+    };
+  }, [imageFiles]);
 
   return (
     <Formik
@@ -98,14 +151,39 @@ function FormInfoAccount() {
               placeholder="Deskripsi Produk"
               formikProps={formikProps}
             />
-            <div>
+            <div className={styles.imagePreviewProduk}>
               <FormikController
+                id="file"
                 name="file"
                 control="fileinput"
                 type="file"
+                accept="image/png, image/jpg, image/jpeg"
+                onChange={changeHandler}
                 formikProps={formikProps}
                 variant="outlined"
+                multiple
               />
+              {images.length > 0 ? (
+                <div className={styles.imagePreviewProduk}>
+                  {
+                    // eslint-disable-next-line react/no-array-index-key
+                    images.map((image, idx) => (
+                      <p key={idx}>
+                        <img
+                          src={image}
+                          alt=""
+                          style={{
+                            width: '96px',
+                            height: '96px',
+                            borderRadius: '8px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </p>
+                    ))
+                  }
+                </div>
+              ) : null}
             </div>
             <div className={styles.btnProduk}>
               <ButtonMediumOutline>Preview</ButtonMediumOutline>

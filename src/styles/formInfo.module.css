@@ -40,6 +40,18 @@
   justify-content: center;
 }
 
+.imagePreview {
+  display: flex;
+  justify-content: center;
+}
+
+.imagePreviewProduk {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: scroll;
+}
+
 @media only screen and (max-width: 992px) {
   .bagianKanan {
     width: 90vw;
