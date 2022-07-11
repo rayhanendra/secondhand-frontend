@@ -5,7 +5,7 @@ import NavBar from 'organisms/NavBar/NavBar';
 import Filter from 'components/molecules/Filter/Filter';
 import CardList from 'organisms/CardList/CardList';
 import FaButton from 'components/atoms/FaButton/FaButton';
-import BsCarousel from 'organisms/Carousel.js/BaseCarousel';
+import BsCarousel from 'organisms/Carousel/BaseCarousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { optionsFilter } from 'utils/constants';

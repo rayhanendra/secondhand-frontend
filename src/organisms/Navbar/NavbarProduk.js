@@ -6,7 +6,7 @@ import Images1 from 'images/fi_list.png';
 import Images2 from 'images/fi_bell.png';
 import Images3 from 'images/fi_user.png';
 import Images4 from 'images/imagelogo.png';
-import styles from 'styles/buyer-page.module.css';
+import styles from './NavbarProduk.module.css';
 
 function NavbarProduk() {
   return (
@@ -35,12 +35,12 @@ function NavbarProduk() {
                 aria-label="Search"
                 className={styles.formsearch}
               />
-              <Button type="search" className={styles.btnsearch}>
+              <Button variant="link" type="search" className={styles.btnsearch}>
                 <Search className={styles.iconsearch} />
               </Button>
             </Form.Group>
           </Nav>
-          <Nav className="justify-content-end">
+          <Nav className="justify-content-end gap-4">
             <Navbar.Brand>
               <Image src={Images1} alt="icon-" />
             </Navbar.Brand>
