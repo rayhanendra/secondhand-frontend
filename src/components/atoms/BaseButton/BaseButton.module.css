@@ -39,11 +39,13 @@
   border: 1px solid #7126b5;
   box-shadow: none;
 }
+.btn:disabled {
+  background: #7126b5;
+}
 .btn:checked {
   border: 1px solid #7126b5;
   box-shadow: none;
 }
-
 .btn-check:active {
   background: #7126b5;
 }

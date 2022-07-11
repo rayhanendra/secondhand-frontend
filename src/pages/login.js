@@ -1,17 +1,20 @@
-import React from 'react';
-import { Form, Stack } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Stack } from 'react-bootstrap';
 import styles from 'styles/login-register.module.css';
 import Link from 'next/link';
-import * as Yup from 'yup';
-import { Formik } from 'formik';
 import FormikController from 'components/atoms/Formik/FormikController';
+import { Form, Formik } from 'formik';
+import * as Yup from 'yup';
 import BaseButton from 'components/atoms/BaseButton/BaseButton';
 import TemplateLoginRegister from 'templates/TemplateLoginRegister';
-import { login } from 'store/slices/auth';
 import { useDispatch } from 'react-redux';
+import { login } from 'store/slices/auth';
+import { useRouter } from 'next/router';
 
 function LoginForm() {
   const dispatch = useDispatch();
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
   const initialValues = {
     email: '',
@@ -24,14 +27,14 @@ function LoginForm() {
 
   const onSubmit = (values) => {
     const { email, password } = values;
-
-    // const formData = new FormData();
-    // formData.append('email', email);
-    // formData.append('password', password);
-
-    dispatch(login({ data: { email, password } }));
-
-    console.log('Form data', values);
+    setIsLoading(true);
+    dispatch(login({ data: { email, password } }))
+      .unwrap()
+      .then(() => {
+        setIsLoading(false);
+        router.push('/home');
+      })
+      .catch(() => {});
   };
 
   return (
@@ -59,7 +62,9 @@ function LoginForm() {
               placeholder="Masukkan password"
               formikProps={formikProps}
             />
-            <BaseButton type="submit">Masuk</BaseButton>
+            <BaseButton type="submit" disabled={isLoading}>
+              {isLoading ? '...Loading' : 'Masuk'}
+            </BaseButton>
           </Stack>
         </Form>
       )}
@@ -76,7 +81,7 @@ export default function Login() {
         </h1>
         <LoginForm />
         <div className={styles['text-redirect']}>
-          Belum punya akun ? &nbsp;
+          Belum punya akun? &nbsp;
           <Link href="/register">
             <strong
               className={styles['text-primary']}

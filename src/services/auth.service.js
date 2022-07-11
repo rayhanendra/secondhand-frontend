@@ -14,8 +14,8 @@ const register = (data) =>
 const login = (data) =>
   axios.post(`${API_URL}/users/login`, data).then((response) => {
     if (response.data) {
-      localStorage.setItem('user', JSON.stringify(response.data.user));
-      localStorage.setItem('auth-token', response.data.token);
+      localStorage.setItem('user', JSON.stringify(response.data.data.users));
+      localStorage.setItem('auth-token', response.data.data.token);
     }
     return response;
   });
