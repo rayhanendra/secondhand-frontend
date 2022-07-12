@@ -6,6 +6,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { Provider } from 'react-redux';
 import store, { persistor } from 'store/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import RouteGuard from 'Navigation/RouteGuard';
 
 config.autoAddCss = false;
 
@@ -18,7 +19,9 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Provider store={store}>
         <PersistGate persistor={persistor}>
-          <Component {...pageProps} />
+          <RouteGuard>
+            <Component {...pageProps} />
+          </RouteGuard>
         </PersistGate>
       </Provider>
     </>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Stack } from 'react-bootstrap';
 import styles from 'styles/login-register.module.css';
 import Link from 'next/link';
@@ -9,9 +9,12 @@ import BaseButton from 'components/atoms/BaseButton/BaseButton';
 import TemplateLoginRegister from 'templates/TemplateLoginRegister';
 import { register } from 'store/slices/auth';
 import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/router';
 
 function RegisterForm() {
   const dispatch = useDispatch();
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
   const initialValues = {
     name: '',
@@ -26,14 +29,14 @@ function RegisterForm() {
 
   const onSubmit = (values) => {
     const { name, email, password } = values;
-    // const formData = new FormData();
-    // formData.append('name', name);
-    // formData.append('email', email);
-    // formData.append('password', password);
-
-    dispatch(register({ data: { name, email, password } }));
-
-    console.log('Form data', values);
+    setIsLoading(true);
+    dispatch(register({ data: { name, email, password } }))
+      .unwrap()
+      .then(() => {
+        setIsLoading(false);
+        router.push('/home');
+      })
+      .catch(() => {});
   };
 
   return (
@@ -69,7 +72,9 @@ function RegisterForm() {
               placeholder="Masukkan password"
               formikProps={formikProps}
             />
-            <BaseButton type="submit">Daftar</BaseButton>
+            <BaseButton type="submit" disabled={isLoading}>
+              {isLoading ? '...Loading' : 'Masuk'}
+            </BaseButton>
           </Stack>
         </Form>
       )}
