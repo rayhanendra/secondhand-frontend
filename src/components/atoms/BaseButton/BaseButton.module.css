@@ -11,6 +11,18 @@
   box-shadow: none !important;
 }
 
+.btnProduk {
+  width: 19.5vw;
+  background-color: #7126b5;
+}
+
+.produkOutlined {
+  background: #ffffff;
+  color: #7126b5;
+  width: 19.5vw;
+  border: 1px solid #7126b5;
+}
+
 .btn-check {
   display: flex;
   flex-direction: row;
@@ -150,6 +162,18 @@
     padding: 8px 24px;
     margin-top: 1vh;
     margin-left: 1.5vw;
+  }
+
+  .btnProduk {
+    width: 43vw;
+    background-color: #7126b5;
+  }
+
+  .produkOutlined {
+    background: #ffffff;
+    color: #7126b5;
+    width: 43vw;
+    border: 1px solid #7126b5;
   }
 }
 

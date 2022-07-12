@@ -4,10 +4,7 @@ import { Form, Stack } from 'react-bootstrap';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import FormikController from 'components/atoms/Formik/FormikController';
-import BaseButton, {
-  ButtonMedium,
-  ButtonMediumOutline,
-} from 'components/atoms/BaseButton/BaseButton';
+import BaseButton from 'components/atoms/BaseButton/BaseButton';
 import { useDispatch } from 'react-redux';
 import NavBarInfo from 'organisms/Navbar/NavBarInfo';
 import styles from '../styles/formInfo.module.css';
@@ -31,7 +28,7 @@ function FormInfoAccount() {
     category: '',
     description: '',
     productPrice: '',
-    file: '',
+    file: [],
   };
 
   const validationSchema = Yup.object({
@@ -176,6 +173,7 @@ function FormInfoAccount() {
                             width: '96px',
                             height: '96px',
                             borderRadius: '8px',
+                            marginBottom: '10px',
                             objectFit: 'cover',
                           }}
                         />
@@ -186,8 +184,12 @@ function FormInfoAccount() {
               ) : null}
             </div>
             <div className={styles.btnProduk}>
-              <ButtonMediumOutline>Preview</ButtonMediumOutline>
-              <ButtonMedium>Terbitkan</ButtonMedium>
+              <BaseButton type="submit" variant="produkOutlined">
+                Preview
+              </BaseButton>
+              <BaseButton type="submit" variant="produk">
+                Terbitkan
+              </BaseButton>
             </div>
           </Stack>
         </Form>

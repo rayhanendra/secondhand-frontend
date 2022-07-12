@@ -38,11 +38,11 @@
 .iconBtn {
   opacity: 0;
   width: 96px;
-  height: 96px;
+  height: 90px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: -60px;
+  margin-top: -62px;
 }
 
 .icon {

@@ -14,6 +14,8 @@ function BaseButton(props) {
         [variant === 'primary' && styles.primary],
         [variant === 'secondary' && styles.light],
         [variant === 'outlined' && styles.outlined],
+        [variant === 'produk' && styles.btnProduk],
+        [variant === 'produkOutlined' && styles.produkOutlined],
         [active && styles.primary],
         'btn-check:active',
       ]}
