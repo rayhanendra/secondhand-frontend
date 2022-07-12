@@ -1,15 +1,11 @@
-import { React, useState } from 'react';
-import { Modal, Card, Alert, Button } from 'react-bootstrap';
+import { React } from 'react';
+import { Modal, Card } from 'react-bootstrap';
 import styles from './baseModal.module.css';
 import {
   BaseButton,
   ButtonCardNoModal,
 } from '../../components/atoms/BaseButton/BaseButton';
 import { Whatsapp } from 'react-bootstrap-icons';
-import {
-  TextField,
-  RadioForm,
-} from '../../components/atoms/FormInput/FormInput';
 
 export function ModalPenawaran(props) {
   return (
@@ -83,81 +79,4 @@ export function ModalPenawaran(props) {
       </Modal.Footer>
     </Modal>
   );
-}
-
-export function ModalPenawaran2(props) {
-  const [show, setShow] = useState(false);
-  const [modalShow, setModalShow] = useState(false);
-
-  if (show) {
-    return (
-      <>
-        <Alert
-          variant="success"
-          onClose={() => {
-            setShow(false);
-          }}
-          dismissible
-          style={{
-            zIndex: '1',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            zIndex: 999,
-            display: 'flex',
-            justifyContent: 'center',
-          }}
-        >
-          <p>Status Produk Berhasil Diperbarui</p>
-        </Alert>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <Modal
-          {...props}
-          dialogClassName={styles.modal}
-          contentClassName={styles.modal}
-          size="md"
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
-        >
-          <Modal.Header style={{ border: 'none' }} closeButton />
-          <Modal.Body>
-            <div className={styles.judulModal}>
-              Perbarui status penjualan produkmu
-            </div>
-            <div className={styles.content2}>
-              <RadioForm />
-            </div>
-          </Modal.Body>
-          <Modal.Footer
-            style={{
-              border: 'none',
-              display: 'flex',
-              justifyContent: 'center',
-              paddingTop: '0px',
-            }}
-          >
-            {/* <AlertSuccess/> */}
-            <Button
-              style={{
-                width: '20vw',
-                height: '42px',
-                borderRadius: '16px',
-                background: '#7126b5',
-              }}
-              onClick={() => {
-                setShow(true);
-              }}
-            >
-              Kirim
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </>
-    );
-  }
 }

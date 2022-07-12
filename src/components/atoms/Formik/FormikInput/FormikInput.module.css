@@ -19,3 +19,33 @@
   font-size: 12px !important;
   color: red;
 }
+
+.fileInput {
+  width: 96px;
+  height: 96px;
+  background: #e2d4f0;
+  border-radius: 12px;
+}
+
+.fileInputOutline {
+  width: 96px;
+  height: 96px;
+  border-radius: 12px;
+  border: 1px dashed #7126b5;
+  background: white;
+}
+
+.iconBtn {
+  opacity: 0;
+  width: 96px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: -62px;
+}
+
+.icon {
+  margin-top: 32px;
+  margin-left: 32px;
+}

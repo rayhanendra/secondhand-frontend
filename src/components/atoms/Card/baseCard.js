@@ -1,16 +1,14 @@
 import { React, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { Whatsapp } from 'react-bootstrap-icons';
+import ModalPenawaran2 from 'organisms/Modal/modalStatus';
 import styles from './baseCard.module.css';
 import {
   ButtonCard,
   ButtonCardOutline,
   ButtonCardOutlineStatus,
 } from '../BaseButton/BaseButton';
-import {
-  ModalPenawaran,
-  ModalPenawaran2,
-} from '../../../organisms/Modal/baseModal';
+import { ModalPenawaran } from '../../../organisms/Modal/baseModal';
 
 export function CardNamaPembeli() {
   return (

@@ -11,6 +11,18 @@
   box-shadow: none !important;
 }
 
+.btnProduk {
+  width: 19.5vw;
+  background-color: #7126b5;
+}
+
+.produkOutlined {
+  background: #ffffff;
+  color: #7126b5;
+  width: 19.5vw;
+  border: 1px solid #7126b5;
+}
+
 .btn-check {
   display: flex;
   flex-direction: row;
@@ -78,6 +90,9 @@
   border-radius: 16px;
   padding: 12px 24px;
   margin-top: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .buttonMedium {
@@ -132,8 +147,6 @@
     width: 95vw;
     height: 8vh;
     border-radius: 16px;
-    padding: 12px 24px;
-    margin-top: 2vh;
   }
 
   .buttonMedium {
@@ -145,7 +158,30 @@
   }
 
   .buttonCard {
-    width: 158px;
+    width: max-content;
+    height: 40px;
+    border-radius: 16px;
+    padding: 8px 24px;
+    margin-top: 1vh;
+    margin-left: 1.5vw;
+  }
+
+  .btnProduk {
+    width: 43vw;
+    background-color: #7126b5;
+  }
+
+  .produkOutlined {
+    background: #ffffff;
+    color: #7126b5;
+    width: 43vw;
+    border: 1px solid #7126b5;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .buttonCard {
+    width: max-content;
     height: 40px;
     border-radius: 16px;
     padding: 8px 24px;
@@ -154,13 +190,13 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .buttonCard {
-    width: 158px;
-    height: 40px;
+@media only screen and (max-width: 576px) {
+  .buttonLarge {
+    width: 95vw;
+    height: 7vh;
     border-radius: 16px;
-    padding: 8px 24px;
-    margin-top: 1vh;
-    margin-left: 1.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
