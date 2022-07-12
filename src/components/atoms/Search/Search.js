@@ -8,12 +8,12 @@ function Search() {
       <Form.Control
         type="search"
         placeholder="Cari di sini ..."
-        className={`${styles.search} me-2 rounded-5`}
+        className={`${styles.search}`}
         aria-label="Search"
       />
-      <Form.Control.Feedback>
+      {/* <Form.Control.Feedback>
         <span style={{ top: '5px' }}>wwdwdw </span>
-      </Form.Control.Feedback>
+      </Form.Control.Feedback> */}
     </Form>
   );
 }
