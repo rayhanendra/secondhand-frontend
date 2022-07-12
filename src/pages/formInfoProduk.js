@@ -164,8 +164,8 @@ function FormInfoAccount() {
                 <div className={styles.imagePreviewProduk}>
                   {
                     // eslint-disable-next-line react/no-array-index-key
-                    images.map((image, idx) => (
-                      <p key={idx}>
+                    images.map((image) => (
+                      <p key={image.id}>
                         <img
                           src={image}
                           alt=""
