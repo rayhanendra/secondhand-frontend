@@ -31,6 +31,7 @@
     "react-router-dom": "^6.3.0",
     "redux": "^4.2.0",
     "redux-persist": "^6.0.0",
+    "sweetalert2": "^11.4.23",
     "usehooks-ts": "^2.6.0",
     "yup": "^0.32.11"
   },

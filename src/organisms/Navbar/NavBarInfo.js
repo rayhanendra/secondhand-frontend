@@ -7,10 +7,10 @@ import styles from './navbarInfo.module.css';
 
 const JudulNavbar = () => {
   const { pathname } = useRouter();
-  if (pathname === '/formInfoProduk') {
+  if (pathname === '/tambah-produk') {
     return 'Lengkapi info Produk';
   }
-  if (pathname === '/infoPenawar') {
+  if (pathname === '/info-penawar') {
     return 'Info Penawar';
   }
   return 'Lengkapi info Akun';

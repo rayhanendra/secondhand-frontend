@@ -5,7 +5,7 @@ import styles from './FormikInput.module.css';
 
 const ButtonStyle = () => {
   const { pathname } = useRouter();
-  if (pathname === '/formInfoProduk') {
+  if (pathname === '/tambah-produk') {
     return styles.fileInputOutline;
   }
 

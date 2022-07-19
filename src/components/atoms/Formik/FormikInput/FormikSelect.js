@@ -1,5 +1,5 @@
 import React from 'react';
-import { ErrorMessage } from 'formik';
+import { ErrorMessage, Field } from 'formik';
 import styles from './FormikInput.module.css';
 
 function FormikSelect(props) {
@@ -9,7 +9,8 @@ function FormikSelect(props) {
       <label htmlFor={name} className={styles['input-label']}>
         {label}
       </label>
-      <select
+      <Field
+        as="select"
         className={styles['input-field']}
         id={name}
         name={name}

@@ -5,6 +5,6 @@ export default function authHeader() {
   return {
     'Content-Type': 'application/x-www-form-urlencoded',
     Accept: 'application/json',
-    Authorization: `Bearer ${token}`,
+    Authorization: `${token}`,
   };
 }
