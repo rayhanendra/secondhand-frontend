@@ -41,11 +41,6 @@
   justify-content: space-around;
 }
 
-.imagePreview {
-  display: flex;
-  justify-content: center;
-}
-
 .imagePreviewProduk {
   display: flex;
   flex-direction: row;

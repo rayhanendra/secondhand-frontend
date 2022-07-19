@@ -1,27 +1,21 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import { Form, Stack } from 'react-bootstrap';
+import { Stack } from 'react-bootstrap';
 import * as Yup from 'yup';
-import { Formik } from 'formik';
+import { Formik, Form } from 'formik';
 import FormikController from 'components/atoms/Formik/FormikController';
 import BaseButton from 'components/atoms/BaseButton/BaseButton';
 import { useDispatch } from 'react-redux';
 import NavBarInfo from 'organisms/Navbar/NavBarInfo';
-import styles from '../styles/formInfo.module.css';
+import uuid from 'utils/uuid';
+import Swal from 'sweetalert2';
+import { addProduct } from 'store/slices/product';
+import Image from 'next/image';
+import styles from '../styles/info-produk.module.css';
 
-function FormInfoAccount() {
+function TambahProduk() {
   const dispatch = useDispatch();
-
-  // Initial Value Select Form
-  const [selected, setSelected] = useState('');
-
-  const handleChange = (event) => {
-    console.log('Label 👉️', event.target.selectedOptions[0].label);
-    console.log(event.target.value);
-
-    setSelected(event.target.value);
-  };
-  //
+  const [isLoading, setIsLoading] = useState(false);
 
   const initialValues = {
     productName: '',
@@ -33,23 +27,19 @@ function FormInfoAccount() {
 
   const validationSchema = Yup.object({
     productName: Yup.string().required('Nama Produk diperlukan!'),
-    category: Yup.string().required('Kategori diperlukan!'),
+    // category: Yup.string().required('Kategori diperlukan!'),
     description: Yup.string().required('Deskripsi Produk diperlukan!'),
     productPrice: Yup.number()
       .positive('Format Harga Produk salah!')
       .required('Harga Produk diperlukan!'),
   });
 
-  const onSubmit = (values) => {
-    console.log('Form data', values);
-  };
-
-  // Image Reader Sebelum Upload
+  // Image Handler
   const [imageFiles, setImageFiles] = useState([]);
   const [images, setImages] = useState([]);
   const imageTypeRegex = /image\/(png|jpg|jpeg)/gm;
 
-  const changeHandler = (e) => {
+  const changeFileHandler = (e) => {
     const { files } = e.target;
     const validImageFiles = [];
     // eslint-disable-next-line no-plusplus
@@ -97,6 +87,25 @@ function FormInfoAccount() {
     };
   }, [imageFiles]);
 
+  const onSubmit = (values) => {
+    const { productName, description, productPrice } = values;
+    const file = images;
+    setIsLoading(true);
+    dispatch(
+      addProduct({ data: { productName, description, productPrice, file } })
+    )
+      .unwrap()
+      .then(() => {
+        setIsLoading(false);
+        Swal.fire({
+          title: 'Success',
+          text: 'Data berhasil diubah!',
+          icon: 'success',
+        });
+      })
+      .catch(() => {});
+  };
+
   return (
     <Formik
       initialValues={initialValues}
@@ -122,7 +131,7 @@ function FormInfoAccount() {
               placeholder="Rp. 0,00"
               formikProps={formikProps}
             />
-            <FormikController
+            {/* <FormikController
               control="select"
               type="text"
               label="Kategori*"
@@ -139,7 +148,7 @@ function FormInfoAccount() {
               <option value="Kategori2" label="Kategori 2">
                 Kategori 2
               </option>
-            </FormikController>
+            </FormikController> */}
             <FormikController
               control="textarea"
               type="text"
@@ -155,40 +164,43 @@ function FormInfoAccount() {
                 control="fileinput"
                 type="file"
                 accept="image/png, image/jpg, image/jpeg"
-                onChange={changeHandler}
+                onChange={changeFileHandler}
                 formikProps={formikProps}
                 variant="outlined"
                 multiple
               />
               {images.length > 0 ? (
                 <div className={styles.imagePreviewProduk}>
-                  {
-                    // eslint-disable-next-line react/no-array-index-key
-                    images.map((image) => (
-                      <p key={image.id}>
-                        <img
-                          src={image}
-                          alt=""
-                          style={{
-                            width: '96px',
-                            height: '96px',
-                            borderRadius: '8px',
-                            marginBottom: '10px',
-                            objectFit: 'cover',
-                          }}
-                        />
-                      </p>
-                    ))
-                  }
+                  {images.map((image) => (
+                    <p key={uuid()}>
+                      {/* Masih Pake img biasa, karna gabisa distyle margin */}
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={image}
+                        alt=""
+                        style={{
+                          width: '96px',
+                          height: '96px',
+                          borderRadius: '8px',
+                          marginBottom: '10px',
+                          objectFit: 'cover',
+                        }}
+                      />
+                    </p>
+                  ))}
                 </div>
               ) : null}
             </div>
             <div className={styles.btnProduk}>
-              <BaseButton type="submit" variant="produkOutlined">
-                Preview
+              <BaseButton
+                type="submit"
+                variant="produkOutlined"
+                disabled={isLoading}
+              >
+                {isLoading ? 'Loading...' : 'Simpan'}
               </BaseButton>
-              <BaseButton type="submit" variant="produk">
-                Terbitkan
+              <BaseButton type="submit" variant="produk" disabled={isLoading}>
+                {isLoading ? 'Loading...' : 'Simpan'}
               </BaseButton>
             </div>
           </Stack>
@@ -204,7 +216,7 @@ export default function Home() {
       <NavBarInfo />
       <div className={styles.row}>
         <div className={styles.bagianKanan}>
-          <FormInfoAccount />
+          <TambahProduk />
         </div>
       </div>
     </div>

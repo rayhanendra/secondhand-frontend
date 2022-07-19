@@ -25,8 +25,7 @@ export default function Home() {
         </div>
       </Container>
       <FaButton>
-        <FontAwesomeIcon icon={faPlus} />
-        Jual
+        <FontAwesomeIcon icon={faPlus} /> Jual
       </FaButton>
     </div>
   );

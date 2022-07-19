@@ -1,58 +1,47 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import { Form, Stack } from 'react-bootstrap';
+import { Stack } from 'react-bootstrap';
 import * as Yup from 'yup';
-import { Formik } from 'formik';
+import { Form, Formik } from 'formik';
 import FormikController from 'components/atoms/Formik/FormikController';
 import BaseButton from 'components/atoms/BaseButton/BaseButton';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import NavBarInfo from 'organisms/Navbar/NavBarInfo';
-import { Camera, Display } from 'react-bootstrap-icons';
-import styles from '../styles/formInfo.module.css';
+import { updateUser } from 'store/slices/auth';
+import Swal from 'sweetalert2';
+import uuid from 'utils/uuid';
+import styles from '../styles/info-produk.module.css';
 
-function FormInfoAccount() {
-  // const dispatch = useDispatch();
-
-  // Initial Value Select Form
-  /* eslint-disable no-unused-vars */
-  const [selected, setSelected] = useState('');
-
-  const handleChange = (event) => {
-    console.log('Label 👉️', event.target.selectedOptions[0].label);
-    console.log(event.target.value);
-
-    setSelected(event.target.value);
-  };
-  //
+function Profil() {
+  const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(false);
+  const userRedux = useSelector((state) => state.auth.user);
 
   const initialValues = {
     name: '',
     city: '',
     address: '',
-    noHP: '',
+    contact: '',
     file: '',
   };
 
   const validationSchema = Yup.object({
-    name: Yup.string().required('Nama diperlukan!'),
+    // name: Yup.string().required('Nama diperlukan!'),
     city: Yup.string().required('Kota diperlukan!'),
-    address: Yup.string().required('Alamat diperlukan!'),
-    noHP: Yup.number()
+    address: Yup.string().required('Alamat diperlukan!').nullable(),
+    contact: Yup.number()
       .positive('Format No HP salah!')
       .min(9, 'Format No HP salah!')
-      .required('No HP diperlukan!'),
+      .required('No HP diperlukan!')
+      .nullable(),
   });
 
-  const onSubmit = (values) => {
-    console.log('Form data', values);
-  };
-
-  // Image Reader Sebelum Upload
+  // Handle Image
   const [imageFiles, setImageFiles] = useState([]);
   const [images, setImages] = useState([]);
   const imageTypeRegex = /image\/(png|jpg|jpeg)/gm;
 
-  const changeHandler = (e) => {
+  const changeFileHandler = (e) => {
     const { files } = e.target;
     const validImageFiles = [];
     // eslint-disable-next-line no-plusplus
@@ -100,13 +89,30 @@ function FormInfoAccount() {
     };
   }, [imageFiles]);
 
+  const onSubmit = (values) => {
+    const { name, address, contact } = values;
+    const file = images;
+    setIsLoading(true);
+    dispatch(updateUser({ data: { name, address, contact, file } }))
+      .unwrap()
+      .then(() => {
+        setIsLoading(false);
+        Swal.fire({
+          title: 'Success',
+          text: 'Data berhasil diubah!',
+          icon: 'success',
+        });
+      })
+      .catch(() => {});
+  };
+
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={onSubmit}
     >
-      {({ formikProps }) => (
+      {(formikProps) => (
         <Form>
           <Stack gap={4}>
             <div className={styles.btnInput}>
@@ -116,57 +122,47 @@ function FormInfoAccount() {
                 control="fileinput"
                 type="file"
                 accept="image/png, image/jpg, image/jpeg"
-                onChange={changeHandler}
+                onChange={changeFileHandler}
                 formikProps={formikProps}
               />
-            </div>
-            {images.length > 0 ? (
-              <div>
-                {
-                  // eslint-disable-next-line react/no-array-index-key
-                  images.map((image) => (
-                    <p key={image.id} className={styles.imagePreview}>
+              {images.length > 0 ? (
+                <div>
+                  {images.map((image) => (
+                    <p key={uuid()}>
+                      {/* Masih Pake img biasa, karna gabisa distyle margin */}
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={image}
                         alt=""
+                        width={96}
+                        height={96}
                         style={{
-                          width: '96px',
-                          height: '96px',
                           borderRadius: '8px',
                           objectFit: 'cover',
+                          marginLeft: '-96px',
                         }}
                       />
                     </p>
-                  ))
-                }
-              </div>
-            ) : null}
+                  ))}
+                </div>
+              ) : null}
+            </div>
             <FormikController
               control="input"
               type="text"
               label="Nama*"
               name="name"
-              placeholder="Nama"
+              placeholder={userRedux.name}
               formikProps={formikProps}
             />
             <FormikController
-              control="select"
+              control="input"
               type="text"
               label="Kota*"
               name="city"
+              placeholder="Kota"
               formikProps={formikProps}
-              onChange={handleChange}
-            >
-              <option disabled selected label="Pilih Kota" value="">
-                Pilih Kota
-              </option>
-              <option value="Kota 1" label="Kota 1">
-                Kota 1
-              </option>
-              <option value="Kota 2" label="Kota 2">
-                Kota 2
-              </option>
-            </FormikController>
+            />
             <FormikController
               control="textarea"
               type="text"
@@ -179,11 +175,13 @@ function FormInfoAccount() {
               control="input"
               type="number"
               label="No Handphone*"
-              name="noHP"
+              name="contact"
               placeholder="contoh: +628123456789"
               formikProps={formikProps}
             />
-            <BaseButton type="submit">Simpan</BaseButton>
+            <BaseButton type="submit" disabled={isLoading}>
+              {isLoading ? 'Loading...' : 'Simpan'}
+            </BaseButton>
           </Stack>
         </Form>
       )}
@@ -197,7 +195,7 @@ export default function Home() {
       <NavBarInfo />
       <div className={styles.row}>
         <div className={styles.bagianKanan}>
-          <FormInfoAccount />
+          <Profil />
         </div>
       </div>
     </div>
