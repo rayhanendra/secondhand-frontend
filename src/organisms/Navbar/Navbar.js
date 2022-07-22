@@ -96,12 +96,13 @@ function NavBar() {
                   <Dropdown.Toggle as={CustomToggle} id="dropdown-basic" />
                   <Dropdown.Menu className={styles.menu}>
                     <Dropdown.Header>Akun Saya</Dropdown.Header>
+
                     <Dropdown.Item
-                      href="#/action-1"
                       className={[
                         styles.item,
                         ['d-flex align-items-center gap-3'],
                       ]}
+                      onClick={() => router.push('/profil')}
                     >
                       <FontAwesomeIcon icon={faEdit} color="#7126B5" />
                       Ubah Akun
