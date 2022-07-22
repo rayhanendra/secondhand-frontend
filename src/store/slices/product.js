@@ -43,9 +43,7 @@ export const updateProduct = createAsyncThunk(
 export const deleteProduct = createAsyncThunk(
   'product/deleteProduct',
   async () => {
-    persistor.purge().then(() => {
-      ProductService.deleteProduct();
-    });
+    ProductService.deleteProduct();
   }
 );
 

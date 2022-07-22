@@ -1,28 +1,16 @@
 /* eslint-disable no-unused-vars */
 import { React, useState } from 'react';
-import { Modal, Toast, Button, Form } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 import * as Yup from 'yup';
-import { Formik, Field } from 'formik';
+import { Formik, Form } from 'formik';
 import FormikController from 'components/atoms/Formik/FormikController';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
+import Swal from 'sweetalert2';
+import { useRouter } from 'next/router';
 import styles from './baseModal.module.css';
 
-export function AlertText() {
-  return (
-    <Toast>
-      <Toast.Header>
-        <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
-        <strong className="me-auto">Bootstrap</strong>
-        <small>11 mins ago</small>
-      </Toast.Header>
-      <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
-    </Toast>
-  );
-}
-
 function FormRadio() {
-  const [showA, setShowA] = useState(false);
-  // const dispatch = useDispatch();
+  const router = useRouter();
 
   const initialValues = {
     picked: '',
@@ -33,8 +21,21 @@ function FormRadio() {
   });
 
   const onSubmit = (values) => {
-    alert(JSON.stringify(values, null, 2));
-    console.log('Form data', values);
+    const { picked } = values;
+    if (picked === 'failed') {
+      Swal.fire({
+        title: 'Failed',
+        text: 'Transaksi Gagal',
+        icon: 'error',
+      });
+    } else {
+      Swal.fire({
+        title: 'Success',
+        text: 'Transaksi Berhasil',
+        icon: 'success',
+      });
+    }
+    router.push('/info-penawar');
   };
 
   return (
@@ -80,20 +81,17 @@ function FormRadio() {
             <br />
             {/* <div>Picked: {values.picked}</div> */}
             <Button
-              // type="submit"
+              type="submit"
               style={{
                 width: '300px',
                 height: '42px',
                 borderRadius: '16px',
                 background: '#7126b5',
               }}
-              onClick={() => setShowA(true)}
             >
               Kirim
             </Button>
           </Form>
-
-          <AlertText show={showA} onHide={() => setShowA(false)} />
         </>
       )}
     </Formik>

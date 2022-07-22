@@ -12,12 +12,6 @@ export const register = createAsyncThunk(
       const response = await AuthService.register(data);
       return { user: response.data.data.users };
     } catch (error) {
-      // const message =
-      //   (error.response &&
-      //     error.response.data &&
-      //     error.response.data.message) ||
-      //   error.message ||
-      //   error.toString();
       return thunkAPI.rejectWithValue();
     }
   }
@@ -30,12 +24,18 @@ export const login = createAsyncThunk(
       const response = await AuthService.login(data);
       return { user: response.data.data.users };
     } catch (error) {
-      // const message =
-      //   (error.response &&
-      //     error.response.data &&
-      //     error.response.data.message) ||
-      //   error.message ||
-      //   error.toString();
+      return thunkAPI.rejectWithValue();
+    }
+  }
+);
+
+export const getUserById = createAsyncThunk(
+  'auth/getUserById',
+  async ({ id }, thunkAPI) => {
+    try {
+      const response = await userService.getUserById(id);
+      return { profile: response.data.data.users };
+    } catch (error) {
       return thunkAPI.rejectWithValue();
     }
   }
@@ -43,17 +43,11 @@ export const login = createAsyncThunk(
 
 export const updateUser = createAsyncThunk(
   'auth/updateUser',
-  async ({ data }, thunkAPI) => {
+  async ({ data, id }, thunkAPI) => {
     try {
-      const response = await userService.updateUser(data);
+      const response = await userService.updateUser(data, id);
       return { user: response.data.data.users };
     } catch (error) {
-      // const message =
-      //   (error.response &&
-      //     error.response.data &&
-      //     error.response.data.message) ||
-      //   error.message ||
-      //   error.toString();
       return thunkAPI.rejectWithValue();
     }
   }
@@ -71,6 +65,7 @@ export const logout = createAsyncThunk('auth/logout', async () => {
 const initialState = {
   isLoggedIn: false,
   user: null,
+  profile: null,
   status: '',
 };
 const authSlice = createSlice({
@@ -110,15 +105,23 @@ const authSlice = createSlice({
       state.status = 'loading';
     },
     [updateUser.fulfilled]: (state, action) => {
-      state.isLoggedIn = true;
       state.user = action.payload.user;
       state.status = 'success';
     },
     [updateUser.rejected]: (state) => {
       state.status = 'failed';
     },
+    [getUserById.pending]: (state) => {
+      state.status = 'loading';
+    },
+    [getUserById.fulfilled]: (state, action) => {
+      state.profile = action.payload.profile;
+      state.status = 'success';
+    },
+    [getUserById.rejected]: (state) => {
+      state.status = 'failed';
+    },
   },
 });
 const { reducer, actions } = authSlice;
-export const { changeUser } = actions;
 export default reducer;

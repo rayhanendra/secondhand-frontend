@@ -10,7 +10,6 @@ import NavBarInfo from 'organisms/Navbar/NavBarInfo';
 import uuid from 'utils/uuid';
 import Swal from 'sweetalert2';
 import { addProduct } from 'store/slices/product';
-import Image from 'next/image';
 import styles from '../styles/info-produk.module.css';
 
 function TambahProduk() {
@@ -99,7 +98,7 @@ function TambahProduk() {
         setIsLoading(false);
         Swal.fire({
           title: 'Success',
-          text: 'Data berhasil diubah!',
+          text: 'Produk berhasil ditambahkan!',
           icon: 'success',
         });
       })
@@ -197,7 +196,7 @@ function TambahProduk() {
                 variant="produkOutlined"
                 disabled={isLoading}
               >
-                {isLoading ? 'Loading...' : 'Simpan'}
+                {isLoading ? 'Loading...' : 'Tampilkan'}
               </BaseButton>
               <BaseButton type="submit" variant="produk" disabled={isLoading}>
                 {isLoading ? 'Loading...' : 'Simpan'}
