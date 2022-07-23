@@ -1,0 +1,109 @@
+.all_page {
+  margin: 0px;
+  padding: 5vh 15vw 5vh 15vw;
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+}
+
+.leftContent {
+  width: 43vw;
+  margin-right: 2vw;
+}
+
+.image {
+  border-radius: 20px;
+  width: 43vw;
+  height: 436px;
+  object-fit: cover;
+}
+
+.largeCard {
+  width: 43vw;
+  height: max-content;
+  border-radius: 20px;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+  margin-top: 5vh;
+  padding: 20px 15px 20px 15px;
+}
+
+.normalCard {
+  width: 25vw;
+  height: max-content;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+  padding: 20px 15px 20px 15px;
+}
+
+.normalBold {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.normal {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.largeBold {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.large {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+  .all_page {
+    margin: 0px;
+    padding: 0;
+  }
+
+  .page {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .image {
+    width: 98vw;
+    height: 300px;
+    border-radius: 0px;
+  }
+
+  .leftContent {
+    width: 98vw;
+    margin-right: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .normalCard {
+    width: 90vw;
+  }
+
+  .largeCard {
+    width: 90vw;
+  }
+
+  .rightContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    bottom: -270px;
+  }
+
+  .carousel {
+    margin-top: -375px;
+    margin-bottom: 315px;
+  }
+}

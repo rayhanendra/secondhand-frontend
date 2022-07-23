@@ -1,169 +1,106 @@
 import React from 'react';
-import {
-  Col,
-  Container,
-  Row,
-  Form,
-  Button,
-  Nav,
-  Navbar,
-  Carousel,
-} from 'react-bootstrap';
-import { Search } from 'react-bootstrap-icons';
-import Image from 'next/image';
-import Images1 from 'images/fi_list.png';
-import Images2 from 'images/fi_bell.png';
-import Images3 from 'images/fi_user.png';
-import Images4 from 'images/imagelogo.png';
-import Images5 from 'images/Rectangle 134.png';
-import Images6 from 'images/test444.png';
-import Images7 from 'images/test555.png';
-import Images8 from 'images/testi1.jpeg';
-import styles from 'styles/seller-page.module.css';
+import { Carousel, Stack } from 'react-bootstrap';
+import styles from 'styles/product-page.module.css';
+import NavBar from 'organisms/Navbar/Navbar';
+import BaseButton from 'components/atoms/BaseButton/BaseButton';
 
 export default function Sellerproduct() {
   return (
-    <div className={styles.all_page}>
-      <Container fluid>
-        {/* Awal Navbar */}
-        <Navbar bg="light" expand="lg" className="shadow-sm">
-          <Container fluid>
-            <Navbar.Brand href="#">
-              <Image
-                className={styles.nav_logo}
-                width={100}
-                height={50}
-                src={Images4}
-                alt="icon-"
-              />
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse id="navbarScroll">
-              <Nav
-                className="me-auto my-2 my-lg-0 "
-                style={{ maxHeight: '100px' }}
-                navbarScroll
-              >
-                <Form.Group className={styles.search}>
-                  <input
-                    type="search"
-                    placeholder="Cari di sini.."
-                    aria-label="Search"
-                    className={styles.formsearch}
+    <>
+      <NavBar />
+      <div className={styles.all_page}>
+        <div className={styles.page}>
+          <div className={styles.leftContent}>
+            <div className={styles.carousel}>
+              <Carousel>
+                <Carousel.Item interval={3000}>
+                  <img
+                    src="/Rectangle134.png"
+                    alt="First slide"
+                    className={styles.image}
                   />
-                  <Button type="search" className={styles.btnsearch}>
-                    <Search className={styles.iconsearch} />
-                  </Button>
-                </Form.Group>
-              </Nav>
-              <Nav className="justify-content-end">
-                <Navbar.Brand>
-                  <Image src={Images1} alt="icon-" />
-                </Navbar.Brand>
-                <Navbar.Brand>
-                  <Image src={Images2} alt="icon-" />
-                </Navbar.Brand>
-                <Navbar.Brand>
-                  <Image src={Images3} alt="icon-" />
-                </Navbar.Brand>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-        {/* Akhir Navbar */}
-        {/* Awal Carousel Left Content 1 */}
-        <Row>
-          <Col className={styles.leftcol1}>
-            <Carousel className={styles.carousel}>
-              <Carousel.Item interval={1000}>
-                <Image
-                  width={1000}
-                  height={900}
-                  src={Images5}
-                  alt="First slide"
+                </Carousel.Item>
+                <Carousel.Item interval={3000}>
+                  <img
+                    src="/test444.png"
+                    alt="Second slide"
+                    className={styles.image}
+                  />
+                </Carousel.Item>
+                <Carousel.Item interval={3000}>
+                  <img
+                    src="/test555.png"
+                    alt="Third slide"
+                    className={styles.image}
+                  />
+                </Carousel.Item>
+              </Carousel>
+            </div>
+            <div>
+              <div className={styles.largeCard}>
+                <div className={styles.normalBold}>Deskripsi</div>
+                &nbsp;
+                <div className={styles.normal}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                  ea commodo consequat. Duis aute irure dolor in reprehenderit
+                  in voluptate velit esse cillum dolore eu fugiat nulla
+                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                  in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.rightContent}>
+            <div className={styles.normalCard}>
+              <Stack gap={3}>
+                <div className={styles.largeBold}>Jam Tangan Casio</div>
+                <div className={styles.normal}>Aksesoris</div>
+                <div className={styles.large}>Rp. 100.000</div>
+                <Stack gap={3}>
+                  <BaseButton type="submit">Terbitkan</BaseButton>
+                  <BaseButton type="submit" variant="outlined">
+                    Edit
+                  </BaseButton>
+                </Stack>
+              </Stack>
+            </div>
+            <div className={styles.normalCard}>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}
+              >
+                <img
+                  src="/Rectangle33.png"
+                  style={{
+                    width: '48px',
+                    height: '48px',
+                    objectFit: 'cover',
+                    borderRadius: '10px',
+                    marginRight: '15px',
+                  }}
                 />
-              </Carousel.Item>
-              <Carousel.Item interval={1000}>
-                <Image
-                  className="rounded-3"
-                  width={1000}
-                  height={900}
-                  src={Images6}
-                  alt="Second slide"
-                />
-              </Carousel.Item>
-              <Carousel.Item interval={1000}>
-                <Image
-                  className="rounded-3"
-                  width={1000}
-                  height={900}
-                  src={Images7}
-                  alt="Third slide"
-                />
-              </Carousel.Item>
-            </Carousel>
-          </Col>
-          {/* Akhir Carousel Left Content 1 */}
-          {/* Awal Right Content 1 */}
-          <Col className={styles.rightcol1}>
-            <Col className={styles.borderbox}>
-              <Col>
-                <h5>
-                  <strong>Jam Tangan Casio</strong>
-                </h5>
-                <p className={styles.p2}>Aksesoris</p>
-                <br />
-                <h6>Rp. 250.000</h6>
-                <br />
-                <Button className={styles.btnseller1} type="submit">
-                  Terbitkan
-                </Button>{' '}
-                <br />
-                <br />
-                <Button className={styles.btnseller2} type="submit">
-                  Edit
-                </Button>{' '}
-              </Col>
-            </Col>
-            <br />
-            <Col className={styles.rightcol2}>
-              <Col className={styles.borderbox}>
-                <Image src={Images8} alt="icon-" />
-                <h5 className={styles.h5}>Nama Penjual</h5>
-                <p className={styles.p1}>Kota</p>
-              </Col>
-            </Col>
-          </Col>
-        </Row>
-        {/* Akhir Right Content 1 */}
-        {/* Awal Left Content 2 */}
-        <Row>
-          <Col className={styles.leftcol2}>
-            <Col className={styles.borderbox}>
-              <h5>Deskripsi</h5>
-              <p className={styles.p2}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                <br />
-                <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </Col>
-          </Col>
-        </Row>
-        {/* Akhir Left Content 2 */}
-      </Container>
-    </div>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <div className={styles.normalBold}>Nama Penjual</div>
+                  <div className={styles.normal}>Kota</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
