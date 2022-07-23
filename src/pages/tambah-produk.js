@@ -5,30 +5,33 @@ import * as Yup from 'yup';
 import { Formik, Form } from 'formik';
 import FormikController from 'components/atoms/Formik/FormikController';
 import BaseButton from 'components/atoms/BaseButton/BaseButton';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import NavBarInfo from 'organisms/Navbar/NavBarInfo';
 import uuid from 'utils/uuid';
 import Swal from 'sweetalert2';
 import { addProduct } from 'store/slices/product';
 import styles from '../styles/info-produk.module.css';
+import { useRouter } from 'next/router';
 
 function TambahProduk() {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+  const { user } = useSelector((state) => state.auth);
 
   const initialValues = {
-    productName: '',
+    name: '',
     category: '',
     description: '',
-    productPrice: '',
+    price: '',
     file: [],
   };
 
   const validationSchema = Yup.object({
-    productName: Yup.string().required('Nama Produk diperlukan!'),
+    name: Yup.string().required('Nama Produk diperlukan!'),
     // category: Yup.string().required('Kategori diperlukan!'),
     description: Yup.string().required('Deskripsi Produk diperlukan!'),
-    productPrice: Yup.number()
+    price: Yup.number()
       .positive('Format Harga Produk salah!')
       .required('Harga Produk diperlukan!'),
   });
@@ -87,11 +90,11 @@ function TambahProduk() {
   }, [imageFiles]);
 
   const onSubmit = (values) => {
-    const { productName, description, productPrice } = values;
+    const { name, description, price } = values;
     const file = images;
     setIsLoading(true);
     dispatch(
-      addProduct({ data: { productName, description, productPrice, file } })
+      addProduct({ data: { name, description, price, file, user_id: user.id } })
     )
       .unwrap()
       .then(() => {
@@ -101,6 +104,7 @@ function TambahProduk() {
           text: 'Produk berhasil ditambahkan!',
           icon: 'success',
         });
+        router.push('/tambah-produk');
       })
       .catch(() => {});
   };
@@ -118,7 +122,7 @@ function TambahProduk() {
               control="input"
               type="text"
               label="Nama Produk*"
-              name="productName"
+              name="name"
               placeholder="Nama Produk"
               formikProps={formikProps}
             />
@@ -126,7 +130,7 @@ function TambahProduk() {
               control="input"
               type="number"
               label="Harga Produk*"
-              name="productPrice"
+              name="price"
               placeholder="Rp. 0,00"
               formikProps={formikProps}
             />
