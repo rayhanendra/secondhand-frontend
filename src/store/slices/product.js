@@ -1,6 +1,5 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { persistor } from 'store/store';
 import { PURGE } from 'redux-persist';
 import ProductService from '../../services/product.service';
 
@@ -11,12 +10,6 @@ export const addProduct = createAsyncThunk(
       const response = await ProductService.addProduct(data);
       return { product: response.data.data.product };
     } catch (error) {
-      // const message =
-      //   (error.response &&
-      //     error.response.data &&
-      //     error.response.data.message) ||
-      //   error.message ||
-      //   error.toString();
       return thunkAPI.rejectWithValue();
     }
   }
@@ -29,12 +22,6 @@ export const updateProduct = createAsyncThunk(
       const response = await ProductService.updateProduct(data);
       return { product: response.data.data.product };
     } catch (error) {
-      // const message =
-      //   (error.response &&
-      //     error.response.data &&
-      //     error.response.data.message) ||
-      //   error.message ||
-      //   error.toString();
       return thunkAPI.rejectWithValue();
     }
   }
@@ -48,7 +35,7 @@ export const deleteProduct = createAsyncThunk(
 );
 
 const initialState = {
-  product: {},
+  product: null,
   status: '',
 };
 
@@ -61,7 +48,7 @@ const productSlice = createSlice({
       state.status = 'loading';
     },
     [addProduct.fulfilled]: (state, action) => {
-      state.product.push(action.payload.product);
+      state.product = action.payload.product;
       state.status = 'success';
     },
     [addProduct.rejected]: (state) => {
