@@ -10,8 +10,8 @@ import NavBarInfo from 'organisms/Navbar/NavBarInfo';
 import uuid from 'utils/uuid';
 import Swal from 'sweetalert2';
 import { addProduct } from 'store/slices/product';
-import styles from '../styles/info-produk.module.css';
 import { useRouter } from 'next/router';
+import styles from '../styles/info-produk.module.css';
 
 function TambahProduk() {
   const dispatch = useDispatch();
