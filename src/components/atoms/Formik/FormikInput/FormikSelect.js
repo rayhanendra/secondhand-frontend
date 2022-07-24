@@ -1,19 +1,21 @@
 import React from 'react';
-import { Field, ErrorMessage } from 'formik';
+import { ErrorMessage, Field } from 'formik';
 import styles from './FormikInput.module.css';
 
-function FormikInput(props) {
-  const { name, label, formikProps, ...rest } = props;
-
+function FormikSelect(props) {
+  const { name, label, formikProps, selected, disabled, ...rest } = props;
   return (
     <div className={styles['input-container']}>
-      <label className={styles['input-label']} htmlFor={name}>
+      <label htmlFor={name} className={styles['input-label']}>
         {label}
       </label>
       <Field
-        id={name}
+        as="select"
         className={styles['input-field']}
+        id={name}
         name={name}
+        value={selected}
+        disabled={disabled}
         {...rest}
       />
       <div className={styles['input-error']}>
@@ -22,4 +24,5 @@ function FormikInput(props) {
     </div>
   );
 }
-export default FormikInput;
+
+export default FormikSelect;

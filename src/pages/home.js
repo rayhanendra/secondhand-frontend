@@ -8,9 +8,11 @@ import FaButton from 'components/atoms/FaButton/FaButton';
 import BsCarousel from 'organisms/Carousel/BaseCarousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { useRouter } from 'next/router';
 import { optionsFilter } from 'utils/constants';
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div>
       <NavBar />
@@ -24,9 +26,8 @@ export default function Home() {
           <CardList />
         </div>
       </Container>
-      <FaButton>
-        <FontAwesomeIcon icon={faPlus} />
-        Jual
+      <FaButton onClick={() => router.push('/tambah-produk')}>
+        <FontAwesomeIcon icon={faPlus} /> Jual
       </FaButton>
     </div>
   );

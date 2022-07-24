@@ -2,17 +2,17 @@ import React from 'react';
 import { Field, ErrorMessage } from 'formik';
 import styles from './FormikInput.module.css';
 
-function FormikInput(props) {
+function Textarea(props) {
   const { name, label, formikProps, ...rest } = props;
-
   return (
     <div className={styles['input-container']}>
       <label className={styles['input-label']} htmlFor={name}>
         {label}
       </label>
       <Field
-        id={name}
         className={styles['input-field']}
+        as="textarea"
+        id={name}
         name={name}
         {...rest}
       />
@@ -22,4 +22,4 @@ function FormikInput(props) {
     </div>
   );
 }
-export default FormikInput;
+export default Textarea;

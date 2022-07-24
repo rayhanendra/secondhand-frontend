@@ -3,20 +3,15 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { persistor } from 'store/store';
 import { PURGE } from 'redux-persist';
 import AuthService from '../../services/auth.service';
+import userService from 'services/user.service';
 
 export const register = createAsyncThunk(
   'auth/register',
   async ({ data }, thunkAPI) => {
     try {
       const response = await AuthService.register(data);
-      return { user: response.data.user };
+      return { user: response.data.data.users };
     } catch (error) {
-      // const message =
-      //   (error.response &&
-      //     error.response.data &&
-      //     error.response.data.message) ||
-      //   error.message ||
-      //   error.toString();
       return thunkAPI.rejectWithValue();
     }
   }
@@ -27,14 +22,32 @@ export const login = createAsyncThunk(
   async ({ data }, thunkAPI) => {
     try {
       const response = await AuthService.login(data);
-      return { user: response.data.user };
+      return { user: response.data.data.users };
     } catch (error) {
-      // const message =
-      //   (error.response &&
-      //     error.response.data &&
-      //     error.response.data.message) ||
-      //   error.message ||
-      //   error.toString();
+      return thunkAPI.rejectWithValue();
+    }
+  }
+);
+
+export const getUserById = createAsyncThunk(
+  'auth/getUserById',
+  async ({ id }, thunkAPI) => {
+    try {
+      const response = await userService.getUserById(id);
+      return { profile: response.data.data.users };
+    } catch (error) {
+      return thunkAPI.rejectWithValue();
+    }
+  }
+);
+
+export const updateUser = createAsyncThunk(
+  'auth/updateUser',
+  async ({ data, id }, thunkAPI) => {
+    try {
+      const response = await userService.updateUser(data, id);
+      return { user: response.data.data.users };
+    } catch (error) {
       return thunkAPI.rejectWithValue();
     }
   }
@@ -52,6 +65,7 @@ export const logout = createAsyncThunk('auth/logout', async () => {
 const initialState = {
   isLoggedIn: false,
   user: null,
+  profile: null,
   status: '',
 };
 const authSlice = createSlice({
@@ -87,8 +101,27 @@ const authSlice = createSlice({
       state.isLoggedIn = false;
       state.user = null;
     },
+    [updateUser.pending]: (state) => {
+      state.status = 'loading';
+    },
+    [updateUser.fulfilled]: (state, action) => {
+      state.user = action.payload.user;
+      state.status = 'success';
+    },
+    [updateUser.rejected]: (state) => {
+      state.status = 'failed';
+    },
+    [getUserById.pending]: (state) => {
+      state.status = 'loading';
+    },
+    [getUserById.fulfilled]: (state, action) => {
+      state.profile = action.payload.profile;
+      state.status = 'success';
+    },
+    [getUserById.rejected]: (state) => {
+      state.status = 'failed';
+    },
   },
 });
 const { reducer, actions } = authSlice;
-export const { changeUser } = actions;
 export default reducer;

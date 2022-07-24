@@ -46,4 +46,8 @@
     border: 0px;
     margin-right: 2vw;
   }
+
+  .navbar {
+    height: 8vh;
+  }
 }

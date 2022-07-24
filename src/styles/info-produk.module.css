@@ -7,9 +7,7 @@
 .bagianKanan {
   margin-top: 4vh;
   padding-left: 0;
-  display: flex;
-  justify-content: flex-start;
-  z-index: 1;
+  width: 40vw;
 }
 
 .bagianKananProduk {
@@ -26,15 +24,34 @@
 
 .row {
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  margin-bottom: 20px;
+}
+
+.btnInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnProduk {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  justify-content: space-around;
+}
+
+.imagePreviewProduk {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 @media only screen and (max-width: 992px) {
   .bagianKanan {
-    display: flex;
-    justify-content: center;
-    margin-top: 0;
+    width: 90vw;
   }
 
   .bagianKananProduk {
@@ -58,5 +75,14 @@
   .row {
     display: flex;
     flex-direction: row;
+    height: 92vh;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .bagianKananPenawar {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 4vh;
   }
 }
