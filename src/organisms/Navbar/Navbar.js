@@ -68,9 +68,14 @@ function NavBar() {
             onClick={handleShow}
           />
           <div className="d-flex align-items-center gap-3">
-            <Navbar.Brand className="d-none d-md-block">
+            <Navbar.Brand
+              className="d-none d-md-block"
+              onClick={() => router.push('/home')}
+              style={{ cursor: 'pointer' }}
+            >
               Second Hand
             </Navbar.Brand>
+
             <Search />
           </div>
           {!user ? (
@@ -85,7 +90,7 @@ function NavBar() {
             </Nav.Link>
           ) : (
             <div className="d-none d-md-flex">
-              <Nav.Link>
+              <Nav.Link href="/seller/daftar-jual">
                 <FontAwesomeIcon icon={faList} color="gray" />
               </Nav.Link>
               <Nav.Link>
@@ -96,7 +101,6 @@ function NavBar() {
                   <Dropdown.Toggle as={CustomToggle} id="dropdown-basic" />
                   <Dropdown.Menu className={styles.menu}>
                     <Dropdown.Header>Akun Saya</Dropdown.Header>
-
                     <Dropdown.Item
                       className={[
                         styles.item,
@@ -109,7 +113,6 @@ function NavBar() {
                     </Dropdown.Item>
                     <div className="border-bottom" />
                     <Dropdown.Item
-                      href="#/action-2"
                       className={[
                         styles.item,
                         ['d-flex align-items-center gap-3'],
@@ -166,7 +169,7 @@ function NavBar() {
                 <Link href="/seller/daftar-jual">
                   <div className="">Daftar Jual</div>
                 </Link>
-                <Link href="akun">
+                <Link href="/profil">
                   <div className="">Akun Saya</div>
                 </Link>
               </Stack>

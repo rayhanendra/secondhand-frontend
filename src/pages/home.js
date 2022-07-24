@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import NavBar from 'organisms/NavBar/NavBar';
 
 import Filter from 'components/molecules/Filter/Filter';
-import CardList from 'organisms/CardList/CardList';
+import CardProduct from 'organisms/CardProduct/CardProduct';
 import FaButton from 'components/atoms/FaButton/FaButton';
 import BsCarousel from 'organisms/Carousel.js/BaseCarousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,8 +11,9 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
 import { optionsFilter } from 'utils/constants';
 
-export default function Home() {
+export default function HomePage() {
   const router = useRouter();
+
   return (
     <div>
       <NavBar />
@@ -23,7 +24,7 @@ export default function Home() {
           <Filter options={optionsFilter} />
         </div>
         <div className="mb-4 px-3">
-          <CardList />
+          <CardProduct />
         </div>
       </Container>
       <FaButton onClick={() => router.push('/tambah-produk')}>
