@@ -15,6 +15,18 @@ export const addProduct = createAsyncThunk(
   }
 );
 
+export const getAllProduct = createAsyncThunk(
+  'product/getAllProduct',
+  async (_, thunkAPI) => {
+    try {
+      const response = await ProductService.getAllProduct();
+      return { products: response.data.data };
+    } catch (error) {
+      return thunkAPI.rejectWithValue();
+    }
+  }
+);
+
 export const updateProduct = createAsyncThunk(
   'product/updateProduct',
   async ({ data }, thunkAPI) => {
@@ -36,6 +48,7 @@ export const deleteProduct = createAsyncThunk(
 
 const initialState = {
   product: null,
+  products: [],
   status: '',
 };
 
@@ -52,6 +65,16 @@ const productSlice = createSlice({
       state.status = 'success';
     },
     [addProduct.rejected]: (state) => {
+      state.status = 'failed';
+    },
+    [getAllProduct.pending]: (state) => {
+      state.status = 'loading';
+    },
+    [getAllProduct.fulfilled]: (state, action) => {
+      state.products = action.payload.products;
+      state.status = 'success';
+    },
+    [getAllProduct.rejected]: (state) => {
       state.status = 'failed';
     },
     [updateProduct.pending]: (state) => {

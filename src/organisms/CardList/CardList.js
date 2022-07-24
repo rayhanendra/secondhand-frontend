@@ -1,5 +1,4 @@
 import BaseCard from 'components/atoms/BaseCard/BaseCard';
-import React from 'react';
 import uuid from 'utils/uuid';
 
 function CardList() {

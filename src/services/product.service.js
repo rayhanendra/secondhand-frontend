@@ -5,7 +5,7 @@ const API_URL = process.env.NEXT_PUBLIC_ENV;
 const addProduct = (data) =>
   axios.post(`${API_URL}/product`, data).then((response) => response);
 
-const getProduct = () =>
+const getAllProduct = () =>
   axios.get(`${API_URL}/product`).then((response) => response);
 
 const getProductById = () =>
@@ -19,7 +19,7 @@ const deleteProduct = () =>
 
 const productService = {
   addProduct,
-  getProduct,
+  getAllProduct,
   getProductById,
   updateProduct,
   deleteProduct,

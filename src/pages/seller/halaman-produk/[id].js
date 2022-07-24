@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Carousel, Stack } from 'react-bootstrap';
 import styles from 'styles/product-page.module.css';
 import NavBar from 'organisms/Navbar/Navbar';
 import BaseButton from 'components/atoms/BaseButton/BaseButton';
-import ModalPenawaranBuyer from 'organisms/Modal/modalPenawaran';
 
-export default function Buyerproduct() {
-  const [modalShow, setModalShow] = useState(false);
+export default function SellerProduct() {
   return (
     <>
       <NavBar />
@@ -69,17 +67,9 @@ export default function Buyerproduct() {
                 <div className={styles.normal}>Aksesoris</div>
                 <div className={styles.large}>Rp. 100.000</div>
                 <Stack gap={3}>
-                  <BaseButton type="submit">
-                    <div
-                      onClick={() => setModalShow(true)}
-                      onKeyDown={() => setModalShow(true)}
-                      aria-hidden="true"
-                    >
-                      Saya Tertarik
-                    </div>
-                  </BaseButton>
+                  <BaseButton type="submit">Terbitkan</BaseButton>
                   <BaseButton type="submit" variant="outlined">
-                    Share
+                    Edit
                   </BaseButton>
                 </Stack>
               </Stack>
@@ -111,11 +101,6 @@ export default function Buyerproduct() {
           </div>
         </div>
       </div>
-
-      <ModalPenawaranBuyer
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
     </>
   );
 }

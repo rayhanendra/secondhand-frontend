@@ -2,7 +2,7 @@ import { combineReducers } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import productsReducer from './slices/product';
+import productReducer from './slices/product';
 import authReducer from './slices/auth';
 
 const persistConfig = {
@@ -12,7 +12,7 @@ const persistConfig = {
 
 const reducer = combineReducers({
   auth: authReducer,
-  products: productsReducer,
+  product: productReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

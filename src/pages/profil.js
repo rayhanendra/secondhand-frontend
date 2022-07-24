@@ -192,7 +192,7 @@ function Profil() {
   );
 }
 
-export function Home() {
+export function ProfilePage() {
   return (
     <div>
       <NavBarInfo />
@@ -205,4 +205,4 @@ export function Home() {
   );
 }
 
-export default Home;
+export default ProfilePage;
