@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import NavBar from 'organisms/NavBar/NavBar';
 
 import Filter from 'components/molecules/Filter/Filter';
 import CardProduct from 'organisms/CardProduct/CardProduct';
@@ -10,13 +9,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
 import { optionsFilter } from 'utils/constants';
+import BaseNavBar from 'organisms/NavBar/BaseNavBar';
 
 export default function HomePage() {
   const router = useRouter();
 
   return (
     <div>
-      <NavBar />
+      <BaseNavBar />
       <Container fluid="xl" className="p-0">
         <BsCarousel />
         <div className="mb-2 mb-md-4">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Carousel, Stack } from 'react-bootstrap';
 import styles from 'styles/product-page.module.css';
-import NavBar from 'organisms/Navbar/Navbar';
+import BaseNavBar from 'organisms/NavBar/BaseNavBar';
 import BaseButton from 'components/atoms/BaseButton/BaseButton';
 import ModalPenawaranBuyer from 'organisms/Modal/modalPenawaran';
 
@@ -9,7 +9,7 @@ export default function BuyerProduct() {
   const [modalShow, setModalShow] = useState(false);
   return (
     <>
-      <NavBar />
+      <BaseNavBar />
       <div className={styles.all_page}>
         <div className={styles.page}>
           <div className={styles.leftContent}>

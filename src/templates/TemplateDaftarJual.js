@@ -1,6 +1,6 @@
 import AccountBox from 'organisms/AccountBox/AccountBox';
 import CategoryBox from 'organisms/CategoryBox/CategoryBox';
-import NavBar from 'organisms/NavBar/NavBar';
+import BaseNavBar from 'organisms/NavBar/BaseNavBar';
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Filter } from 'react-bootstrap-icons';
@@ -12,7 +12,7 @@ function TemplateDaftarJual(props) {
   return (
     <>
       {/* Notes: Navbar sementara */}
-      <NavBar />
+      <BaseNavBar />
       <Container fluid="xl" className="p-0 py-4">
         <div className="px-3 fw-bold fs-5">Daftar Jual Saya</div>
         <div className="p-3">

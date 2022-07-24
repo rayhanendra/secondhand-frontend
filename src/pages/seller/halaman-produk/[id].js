@@ -1,13 +1,13 @@
 import React from 'react';
 import { Carousel, Stack } from 'react-bootstrap';
 import styles from 'styles/product-page.module.css';
-import NavBar from 'organisms/Navbar/Navbar';
+import BaseNavBar from 'organisms/NavBar/BaseNavBar';
 import BaseButton from 'components/atoms/BaseButton/BaseButton';
 
 export default function SellerProduct() {
   return (
     <>
-      <NavBar />
+      <BaseNavBar />
       <div className={styles.all_page}>
         <div className={styles.page}>
           <div className={styles.leftContent}>

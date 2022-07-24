@@ -24,7 +24,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from 'store/slices/auth';
 import { useRouter } from 'next/router';
-import styles from './NavBar.module.css';
+import styles from './BaseNavBar.module.css';
 
 const CustomToggle = React.forwardRef(({ onClick }, ref) => (
   <FontAwesomeIcon
@@ -40,7 +40,7 @@ const CustomToggle = React.forwardRef(({ onClick }, ref) => (
 
 CustomToggle.displayName = 'CustomToggle';
 
-function NavBar() {
+function BaseNavBar() {
   const dispatch = useDispatch();
   const router = useRouter();
   const { user } = useSelector((state) => state.auth);
@@ -181,4 +181,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default BaseNavBar;
