@@ -9,7 +9,7 @@ import {
   Offcanvas,
   Stack,
 } from 'react-bootstrap';
-import IconLogin from 'images/iconLogin';
+import IconLogin from 'images/IconLogin';
 import Link from 'next/link';
 import {
   faBell,
