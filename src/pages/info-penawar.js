@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBarInfo from 'organisms/Navbar/NavBarInfo';
+import NavBarInfo from 'organisms/NavBar/NavBarInfo';
 // import { AlertText } from 'organisms/Modal/modalStatus';
 import style from '../styles/info-produk.module.css';
 import CardPenawaran from '../organisms/CardPenawaran/cardPenawaran';

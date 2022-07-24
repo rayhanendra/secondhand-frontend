@@ -6,7 +6,7 @@ import { Form, Formik } from 'formik';
 import FormikController from 'components/atoms/Formik/FormikController';
 import BaseButton from 'components/atoms/BaseButton/BaseButton';
 import { useDispatch, useSelector } from 'react-redux';
-import NavBarInfo from 'organisms/Navbar/NavBarInfo';
+import NavBarInfo from 'organisms/NavBar/NavBarInfo';
 import { getUserById, updateUser } from 'store/slices/auth';
 import Swal from 'sweetalert2';
 import uuid from 'utils/uuid';
