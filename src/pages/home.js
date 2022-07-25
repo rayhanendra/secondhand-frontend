@@ -10,6 +10,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
 import { optionsFilter } from 'utils/constants';
 import BaseNavBar from 'organisms/NavBar/BaseNavBar';
+import Link from 'next/link';
 
 export default function HomePage() {
   const router = useRouter();
@@ -28,7 +29,8 @@ export default function HomePage() {
         </div>
       </Container>
       <FaButton onClick={() => router.push('/tambah-produk')}>
-        <FontAwesomeIcon icon={faPlus} /> Jual
+        <FontAwesomeIcon icon={faPlus} />
+        <Link href="/tambah-produk">Jual</Link>
       </FaButton>
     </div>
   );
